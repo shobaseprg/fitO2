@@ -42,13 +42,18 @@ ActiveRecord::Schema.define(version: 2020_05_07_143915) do
     t.string "slack", null: false
     t.integer "period", null: false
     t.integer "style", null: false
-    t.integer "team", null: false
+    t.integer "team_id", null: false
     t.integer "output_times", default: 0
     t.integer "on_off", default: 0
     t.integer "rank"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

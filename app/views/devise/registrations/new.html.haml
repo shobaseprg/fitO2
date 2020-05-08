@@ -16,11 +16,11 @@
   .field
     = f.label :style
     %br/
-    = f.select :style, [["--", 0],["短期", 1],["夜間", 2]]
+    = f.select :style, [["選択してください", 0],["短期", 1],["夜間", 2]]
   .field
     = f.label :team
     %br/
-    = f.text_field :team, autofocus: true, autocomplete: "team"
+    = f.collection_select :team_id, Team.all, :id, :name ,{prompt: "選択してください"}
   .field
     = f.label :email
     %br/

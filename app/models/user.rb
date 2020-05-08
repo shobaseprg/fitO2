@@ -12,6 +12,9 @@ VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
 # ===================================
 # アソシエーション
 # ===================================
+extend ActiveHash::Associations::ActiveRecordExtensions
+belongs_to_active_hash :team
+
 has_many :posts
 #  ===================================
 #  バリデーション
@@ -20,6 +23,7 @@ validates :name, presence: true, uniqueness: true,length: { maximum: 20 }
 validates :slack, presence: true, length: { maximum: 50 }
 validates :period, presence: true, inclusion: {in: 50..999 }       
 validates :style, presence: true, inclusion: {in: 1..2 } 
+validates :team_id, presence: true
 validates :email, presence: true, uniqueness: true
 validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX }, on: :create
 end
