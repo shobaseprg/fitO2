@@ -11,4 +11,11 @@ Rails.application.routes.draw do
 
   
   root to: 'entrances#index'
+
+  resources :users do
+    collection do
+      patch :swich
+    end
+  end
+
 end
