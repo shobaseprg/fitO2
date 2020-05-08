@@ -13,7 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :style,             null: false
       t.integer :team,                null: false
       t.integer :output_times, default: "0"    
-      t.integer :on_off,default: "0"
+      t.integer :on_off,default:"0"
       t.integer :rank
 
 
