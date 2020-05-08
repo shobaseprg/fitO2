@@ -8,7 +8,7 @@ class User < ApplicationRecord
 #  ===================================
 #  カスタムバリデーション
 #  ===================================
-VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
+VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
 # ===================================
 # アソシエーション
 # ===================================
@@ -19,6 +19,7 @@ has_many :posts
 validates :name, presence: true, uniqueness: true,length: { maximum: 20 }
 validates :slack, presence: true, length: { maximum: 50 }
 validates :period, presence: true, inclusion: {in: 50..999 }       
+validates :style, presence: true, inclusion: {in: 1..2 } 
 validates :email, presence: true, uniqueness: true
 validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX }, on: :create
 end
