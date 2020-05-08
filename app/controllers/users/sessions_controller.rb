@@ -14,9 +14,10 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  def destroy
+    current_user.update(on_off: 0)
+    super
+  end
 
   # protected
 
