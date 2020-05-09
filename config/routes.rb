@@ -14,8 +14,14 @@ Rails.application.routes.draw do
 
   resources :users do
     collection do
-      patch :swich
+      patch "swich"
     end
   end
 
+  resources :lessons,only: :index do
+    member do
+      get "inputs"
+      get "outpus"
+    end
+  end
 end

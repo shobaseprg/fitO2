@@ -397,3 +397,12 @@ i = 1
 lessons_last_task.each do |lesson|
   Lesson.create(sub_number:i,title:lesson,lesson_no:1 ,base_or_development:2)
 end
+
+# ===================================
+# テストユーザー
+# ===================================
+
+User.create(email:"1@gmail",password:"1111111a",name:"1",slack:"1",period: 50,style:"1",team_id:"1",output_times:0 ,on_off:0,rank:0)
+
+
+Post.create(title: "テックマスターの使い方について(基礎1-1 質問)",content:"使い方わかりません",lesson_id:1,input_user_id:1,input_or_output:0 )
