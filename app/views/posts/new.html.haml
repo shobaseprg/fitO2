@@ -1,12 +1,20 @@
+-# ===================================
+-# 教えます投稿フォーム
+-# ===================================
 .mark_down
-  = form_with model: @post, url: {controller: 'posts', action: 'create' },local: true do |f|
-    = f.text_field :title
-    = f.text_area :content
-    = f.hidden_field :lesson_id, value: params[:lesson_id]
-    = f.hidden_field :start_input_or_output, value: 1
-    = f.submit
-    .preview_btn
-      プレユー
+  .form
+    = form_with model: @post, url: {controller: 'posts', action: 'create' },local: true do |f|
+      .form__title
+        = f.text_field :title, placeholder: "タイトル",class: "title_field"
+      .form__content
+        = f.text_area :content, placeholder: "マークダウン記法で記載してください",class: "content_field"
+      = f.hidden_field :lesson_id, value: params[:lesson_id]
+      = f.hidden_field :start_input_or_output, value: 1
+      .form__btns
+        .preview_btn
+          プレビュー
+        = f.submit
+
 .preview
   
   

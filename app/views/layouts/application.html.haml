@@ -10,8 +10,8 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    = render 'layouts/notifications'
-    = render partial: "layouts/header"
-    .main_content
+    .wrapper 
+      = render 'layouts/notifications'
+      = render partial: "layouts/header"
       = yield
       
