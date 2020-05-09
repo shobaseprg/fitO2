@@ -24,4 +24,6 @@ Rails.application.routes.draw do
       get "outpus"
     end
   end
+
+  resources :posts, only: :new 
 end
