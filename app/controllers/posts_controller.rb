@@ -11,7 +11,6 @@ class PostsController < ApplicationController
 def create
   Post.create(post_params)
   redirect_to "/"
-  binding.pry
 end
 
 
