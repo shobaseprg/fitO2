@@ -1,41 +1,47 @@
 %h2 Sign up
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
   .field
-    = f.label :name
+    = f.label "名前"
     %br/
     = f.text_field :name, autofocus: true, autocomplete: "name", maxlength: "20"
+    = resource.errors.full_messages_for(:name)[0]
   .field
-    = f.label :slack
+    = f.label "スラック"
     %br/
     = f.text_field :slack, autofocus: true, autocomplete: "slack",maxlength: "20"
+    = resource.errors.full_messages_for(:slack)[0]
   .field
-    = f.label :period
+    = f.label "期"
     %br/
-    = f.text_field :period, autofocus: true, autocomplete: "period",maxlength: "3"
+    = f.number_field :period, autofocus: true, autocomplete: "period",maxlength: "3"
+    - if resource.errors.full_messages_for(:period)[0]
+      あなたの所属する期を半角数字で入力してください。
   .field
-    = f.label :style
+    = f.label "学習スタイル"
     %br/
-    = f.text_field :style, autofocus: true, autocomplete: "style"
+    = f.select :style, [["選択してください", 0],["短期", 1],["夜間", 2]]
+    = resource.errors.full_messages_for(:style)[0]
   .field
-    = f.label :team
+    = f.label "チーム名"
     %br/
-    = f.text_field :team, autofocus: true, autocomplete: "team"
+    = f.collection_select :team_id, Team.all, :id, :name ,{prompt: "選択してください"}
+    - if resource.errors.full_messages_for(:team_id)[0]
+      チーム名を選択してください。
   .field
-    = f.label :email
+    = f.label "Eメール"
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
+    = resource.errors.full_messages_for(:nickname)[0]
   .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/ 
+    = f.label "パスワード（半角英数を両方使い８文字以上）"
+    %br/
     = f.password_field :password, autocomplete: "new-password"
+    = resource.errors.full_messages_for(:password)[0]
   .field
-    = f.label :password_confirmation
+    = f.label "パスワード（確認用）"
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
+    = resource.errors.full_messages_for(:password_confirmation)[0]
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"

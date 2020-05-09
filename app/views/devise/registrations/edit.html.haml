@@ -1,36 +1,50 @@
 %h2
   Edit #{resource_name.to_s.humanize}
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
   .field
-    = f.label :email
+    = f.label "名前"
+    %br/
+    = f.text_field :name, autofocus: true, autocomplete: "name", maxlength: "20"
+    = resource.errors.full_messages_for(:name)[0]
+  .field
+    = f.label "スラック"
+    %br/
+    = f.text_field :slack, autofocus: true, autocomplete: "slack",maxlength: "20"
+    = resource.errors.full_messages_for(:slack)[0]
+  .field
+    = f.label "期"
+    %br/
+    = f.number_field :period, autofocus: true, autocomplete: "period",maxlength: "3"
+    - if resource.errors.full_messages_for(:period)[0]
+      あなたの所属する期を半角数字で入力してください。
+  .field
+    = f.label "学習スタイル"
+    %br/
+    = f.select :style, [["選択してください", 0],["短期", 1],["夜間", 2]]
+    = resource.errors.full_messages_for(:style)[0]
+  .field
+    = f.label "チーム名"
+    %br/
+    = f.collection_select :team_id, Team.all, :id, :name ,{prompt: "選択してください"}
+    - if resource.errors.full_messages_for(:team_id)[0]
+      チーム名を選択してください。
+  .field
+    = f.label "Eメール"
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
+    = resource.errors.full_messages_for(:nickname)[0]
   .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
+    パスワードを修正する場合は、入力してください。変更のない場合は空欄にしてください。
+    = f.label "パスワード（半角英数を両方使い８文字以上）"
     %br/
     = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
+    = resource.errors.full_messages_for(:password)[0]
   .field
-    = f.label :password_confirmation
+    = f.label "パスワード（確認用）"
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
+    = resource.errors.full_messages_for(:password_confirmation)[0]
   .actions
     = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+　　#{button_to "アカウントを抹消する", registration_path(resource_name), data: { confirm: "本当に抹消しますか?" }, method: :delete}
 = link_to "Back", :back
