@@ -14,7 +14,15 @@ Rails.application.routes.draw do
 
   resources :users do
     collection do
-      patch :swich
+      patch "swich"
+    end
+  end
+
+  resources :lesson,only: :index do
+    member do
+      get "2_select"
+      get "3_select"
+      get "4_select"
     end
   end
 
