@@ -16,7 +16,9 @@ $(function() {
       console.log("good")
       // ajax成功したら、テキストエリアを非表示にする。
       // $('#md-textarea').parent().css('display', 'none');
-      // $('#preview-area').append(html.body);
+      $('.preview').empty();
+      $('.preview').append(html.sintax);
+      $('.preview').append(html.body);
       // // markdownボタンとpreviewボタンのdisabledを入れ替える。
       // $('#markdown').removeClass('disabled');
       // $('#preview').addClass('disabled');
