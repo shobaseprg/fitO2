@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-    
-  root to: 'entrances#index'
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'   
@@ -11,7 +9,10 @@ Rails.application.routes.draw do
     get '/users', to: redirect("/users/sign_up")
   end
 
-  resources :users,only: :index do
+  
+  root to: 'entrances#index'
+
+  resources :users do
     collection do
       patch "swich"
     end
