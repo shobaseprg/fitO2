@@ -1,0 +1,20 @@
+%p
+知りたい
+%p
+基礎
+- @base1.each do |lesson|
+  .title
+    = link_to"lesson#{lesson.lesson_no} title:#{lesson.title}",inputs_lesson_path(lesson.id)
+%p
+応用
+%p
+最終
+
+%p
+教えたい
+%p
+基礎
+%p
+応用
+%p
+最終

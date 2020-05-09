@@ -18,12 +18,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :lesson,only: :index do
+  resources :lessons,only: :index do
     member do
-      get "2_select"
-      get "3_select"
-      get "4_select"
+      get "inputs"
+      get "outpus"
     end
   end
-
 end
