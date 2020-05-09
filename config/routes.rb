@@ -24,11 +24,9 @@ Rails.application.routes.draw do
       get "inputs"
       get "outpus"
     end
-    resources :posts do
-      collection do
-        get "preview"
-      end
-    end
+    resources :posts
   end
+
+  resources :preview,only: :index
 
 end
