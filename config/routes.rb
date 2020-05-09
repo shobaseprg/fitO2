@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       get "inputs"
       get "outpus"
     end
+    resources :posts
   end
 
-  resources :posts, only: :new 
 end

@@ -1,1 +1,6 @@
-教えます。新規投稿
+= form_with model: @post, url: {controller: 'posts', action: 'create' }do |f|
+  = f.text_field :title
+  = f.text_area :content
+  = f.hidden_field :lesson_id, value: params[:lesson_id]
+  = f.hidden_field :start_input_or_output, value: 1
+  = f.submit
