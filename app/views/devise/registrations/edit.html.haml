@@ -1,7 +1,6 @@
 %h2
   Edit #{resource_name.to_s.humanize}
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
   .field
     = f.label "名前"
     %br/
@@ -35,6 +34,7 @@
     = f.email_field :email, autofocus: true, autocomplete: "email"
     = resource.errors.full_messages_for(:nickname)[0]
   .field
+    パスワードを修正する場合は、入力してください。変更のない場合は空欄にしてください。
     = f.label "パスワード（半角英数を両方使い８文字以上）"
     %br/
     = f.password_field :password, autocomplete: "new-password"
@@ -46,7 +46,5 @@
     = resource.errors.full_messages_for(:password_confirmation)[0]
   .actions
     = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+　　#{button_to "アカウントを抹消する", registration_path(resource_name), data: { confirm: "本当に抹消しますか?" }, method: :delete}
 = link_to "Back", :back
