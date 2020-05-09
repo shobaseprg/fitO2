@@ -8,7 +8,6 @@ class UsersController < ApplicationController
       current_user.on_off = 0
       current_user.save
     end
-
     redirect_to root_path
   end
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'   
@@ -23,7 +24,11 @@ Rails.application.routes.draw do
       get "inputs"
       get "outpus"
     end
-    resources :posts
+    resources :posts do
+      collection do
+        get "preview"
+      end
+    end
   end
 
 end
