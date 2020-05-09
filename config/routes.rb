@@ -31,4 +31,8 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api, format: 'json' do
+    get 'articles/preview'
+  end
+
 end
