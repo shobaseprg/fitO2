@@ -9,8 +9,13 @@ class PostsController < ApplicationController
 # おしえますcreate
 # ===================================
 def create
-  Post.create(post_params)
-  redirect_to root_path
+    post = Post.new(post_params)
+    if post.save
+      redirect_to root_path
+    else 
+      flash[:alert] = "タイトルと内容どちらも入力してください"
+      redirect_to new_lesson_post_path(params[:lesson_id])
+    end
 end
 # ===================================
 # マークダウンプレビュー

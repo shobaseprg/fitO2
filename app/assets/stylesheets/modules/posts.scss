@@ -1,7 +1,7 @@
 // ===================================
 // 投稿画面
 // ===================================
-.mark_down{
+.post_form{
   margin: 0 auto;
   margin-top:30px;
   width:60%;
@@ -21,6 +21,13 @@
         width: 100%;
         border: solid;
         height: 40px;
+        border-radius: 7px;
+      }
+      #preview_title{
+        color: red;
+        line-height: 40px;
+        border: solid black;
+        text-align: center;
       }
     }
     .form__content{
@@ -31,6 +38,11 @@
         width: 100%;
         border: solid;
         height: 550px;
+        border-radius: 7px;
+        resize: none;
+      }
+      #preview_content{
+        background-color:  #dadada;
       }
     }
     .form__btns{
@@ -59,5 +71,18 @@
       background-color: red;
       color: white;
     }
+    #md_btn{
+      height: 40px;
+      width: 300px;
+      border: solid;
+      border-radius: 10px;
+      line-height: 40px;
+      text-align: center;
+      background-color: skyblue;
     }
   }
+}
+
+.hidden{
+  display: none;
+}
