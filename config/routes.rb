@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :lessons,only: :index do
     member do
       get "inputs"
-      get "outpus"
+      get "outputs"
     end
     resources :posts, only: [:new,:create]
   end
