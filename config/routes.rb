@@ -22,17 +22,17 @@ Rails.application.routes.draw do
   resources :lessons,only: :index do
     member do
       get "inputs"
-      get "outpus"
+      get "outputs"
     end
-    resources :posts do
-      collection do
-        get "preview"
-      end
-    end
+    resources :posts, only: [:new,:create]
   end
 
-  namespace :api, format: 'json' do
-    get 'articles/preview'
+  resources :posts,only: :show 
+
+  resources :articles do
+    collection do
+      get 'preview'
+    end
   end
 
 end

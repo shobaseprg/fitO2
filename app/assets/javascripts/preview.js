@@ -7,12 +7,13 @@ $(function() {
       return;
     }
     $.ajax({  
-      url: '/api/articles/preview',
+      url: '/articles/preview',
       type: 'GET',
       dataType: 'json',
       data: { body: text }
     })
     .done(function(html) {
+      console.log("good")
       $("#mark_down").addClass("hidden")
       $("#preview").removeClass("hidden")
       $('#preview_content').empty();

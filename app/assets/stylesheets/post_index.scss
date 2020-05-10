@@ -1,0 +1,61 @@
+
+// -# ===================================
+// -# 投稿一覧
+// -# ===================================
+.post_all{
+    margin: 0 auto;
+    margin-top: 20px;
+    width:900px;
+    height: 100%;
+    overflow: scroll;
+    .post_all_inner{
+      margin: 0 auto;
+      width: 80%;
+      height: 100%;
+      .categoly{
+        color: red;
+        line-height: 40px;
+        border: solid black;
+      }
+      .one_post{
+        position: relative;
+        a{
+          position: absolute;
+          top:0;
+          left: 0;
+          display: block;
+          height: 100%;
+          width: 100%;
+          
+        }
+        margin: 20px 0;
+        border: solid;
+        height: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+        &__title{
+          border-bottom: solid;
+          overflow: hidden;
+        }
+        &__content{
+        }
+      }
+      .create_btn{
+        margin: 0 auto;
+        height: 50px;
+        width: 200px;
+        border: solid;
+        border-radius: 7px;
+        text-align: center;
+        color: black;
+        line-height: 50px;
+        background-color: red;
+        position: fixed;
+        bottom: 60px;
+        right: 100px;
+        a{
+          color: white;
+        }
+      }
+    }
+  }
