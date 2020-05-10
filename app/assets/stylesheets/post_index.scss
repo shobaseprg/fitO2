@@ -18,11 +18,21 @@
         border: solid black;
       }
       .one_post{
+        position: relative;
+        a{
+          position: absolute;
+          top:0;
+          left: 0;
+          display: block;
+          height: 100%;
+          width: 100%;
+          
+        }
         margin: 20px 0;
         border: solid;
         height: 200px;
         border-radius: 10px;
-        overflow: scroll;
+        overflow: hidden;
         &__title{
           border-bottom: solid;
           overflow: hidden;
