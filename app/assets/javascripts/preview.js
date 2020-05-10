@@ -1,7 +1,6 @@
 $(function() {
   // previewボタンが押されたらイベント発火
   $('.preview_btn').on('click', function() {
-    console.log("ok")
     var text = $('#post_content').val();
     if (text == "") {
       return;
@@ -13,7 +12,6 @@ $(function() {
       data: { body: text }
     })
     .done(function(html) {
-      console.log("good")
       $("#mark_down").addClass("hidden")
       $("#preview").removeClass("hidden")
       $('#preview_content').empty();

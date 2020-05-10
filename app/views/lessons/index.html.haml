@@ -6,16 +6,16 @@
       質問する
   .TABS
     .second_tab
-      基礎
+      基礎_おしえる
     .second_tab
-      応用
+      応用＿おしえる
     .second_tab
-      最終課題
+      最終課題＿おしえる
   .TABS.none
     .second_tab
-      基礎
+      基礎＿しつもん
     .second_tab
-      応用
+      応用＿しつもん
     .second_tab
       最終課題
   -# ===================================
@@ -71,4 +71,46 @@
             = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
           .lesson_lists__one__number
             = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+    -# ===================================
+    -# 教えます一覧
+    -# ===================================  
+      
+  #input_base
+    - i = 1
+    - @bases.each do |base|
+      .lesson_lists{id: "lesson#{i}"}
+        .lesson_no
+          = "lesson #{i}"
+        - base.each do |lesson|
+          .lesson_lists__one
+            .lesson_lists__one__title
+              = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
+            .lesson_lists__one__number
+              = "投稿数：#{lesson.posts.where(input_or_output:1).length}"
+      - i += 1
+
+  #input_development
+    - i = 1
+    - @developments.each do |development|
+      .lesson_lists{id: "lesson#{i}"}
+        .lesson_no
+          = "lesson #{i}"
+        - development.each do |lesson|
+          .lesson_lists__one
+            .lesson_lists__one__title
+              = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
+            .lesson_lists__one__number
+              = "投稿数：#{lesson.posts.where(input_or_output:1).length}"
+      - i += 1
+
+  #input_last_task
+    .lesson_lists
+      .lesson_no
+        最終課題
+      - @last_task.each do |lesson|
+        .lesson_lists__one
+          .lesson_lists__one__title
+            = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
+          .lesson_lists__one__number
+            = "投稿数：#{lesson.posts.where(input_or_output:1).length}"
       
