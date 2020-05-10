@@ -13,5 +13,7 @@
     .wrapper 
       = render 'layouts/notifications'
       = render partial: "layouts/header"
-      = yield
+      .main-content
+        = yield
+      .footer
       
