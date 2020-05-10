@@ -1,5 +1,5 @@
 // ===================================
-// 投稿画面
+// 投稿画面・詳細表示
 // ===================================
 .post_form{
   margin: 0 auto;
@@ -81,6 +81,13 @@
       line-height: 40px;
       text-align: center;
       background-color: skyblue;
+    }
+    .slack_display{
+      height: 40px;
+      width: 100%;
+      border: solid;
+      border-radius: 10px;
+      line-height: 40px;
     }
   }
 }

@@ -1,59 +1,216 @@
-%p
-教えたい
-%p
-基礎
-lesson1
-- @base1.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-    = lesson.posts.where(input_or_output:0).length
-lesson2
-- @base2.each do |lesson|
-  .title
-    = link_to "#{lesson.title}",inputs_lesson_path(lesson.id)
-    = lesson.posts.where(input_or_output:0).length
-%p
-応用
-lesson1
-- @development1.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-    = lesson.posts.where(input_or_output:0).length
+.lesson_box
+  .TABS
+    .first_tab#input_tab
+      教える
+    .first_tab#output_tab
+      質問する
+  .TABS
+    .second_tab
+      基礎
+    .second_tab
+      応用
+    .second_tab
+      最終課題
+  .TABS.none
+    .second_tab
+      基礎
+    .second_tab
+      応用
+    .second_tab
+      最終課題
+    .TABS
+      .second_tab
+        基礎
+      .second_tab
+        応用
+      .second_tab
+        最終課題
+  .TABS
+    - i = 1
+    - while i < 15 do
+      .third_tab
+        = link_to "#{i}","#lesson#{i}"
+      - i += 1
+      
+  .lesson_lists#lesson1
+    .lesson_no
+      lesson １
+    - @base1.each do |lesson|
+      .lesson_lists__one
+        .lesson_lists__one__title
+          = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+        .lesson_lists__one__number
+          = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+  .lesson_lists#lesson2
+    .lesson_no
+      lesson 2
+    - @base2.each do |lesson|
+      .lesson_lists__one
+        .lesson_lists__one__title
+          = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+        .lesson_lists__one__number
+          = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+  .lesson_lists#lesson3
+    .lesson_no
+      lesson 3
+    - @base3.each do |lesson|
+      .lesson_lists__one
+        .lesson_lists__one__title
+          = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+        .lesson_lists__one__number
+          = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+  .lesson_lists#lesson4
+    .lesson_no
+      lesson 4
+    - @base4.each do |lesson|
+      .lesson_lists__one
+        .lesson_lists__one__title
+          = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+        .lesson_lists__one__number
+          = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+  .lesson_lists#lesson5
+    .lesson_no
+      lesson 5
+    - @base5.each do |lesson|
+      .lesson_lists__one
+        .lesson_lists__one__title
+          = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+        .lesson_lists__one__number
+          = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+  .lesson_lists#lesson6
+    .lesson_no
+      lesson 6
+    - @base6.each do |lesson|
+      .lesson_lists__one
+        .lesson_lists__one__title
+          = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+        .lesson_lists__one__number
+          = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+  .lesson_lists#lesson7
+    .lesson_no
+      lesson 7
+    - @base7.each do |lesson|
+      .lesson_lists__one
+        .lesson_lists__one__title
+          = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+        .lesson_lists__one__number
+          = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+  .lesson_lists#lesson8
+    .lesson_no
+      lesson 8
+    - @base8.each do |lesson|
+      .lesson_lists__one
+        .lesson_lists__one__title
+          = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+        .lesson_lists__one__number
+          = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+  .lesson_lists#lesson9
+    .lesson_no
+      lesson 9
+    - @base9.each do |lesson|
+      .lesson_lists__one
+        .lesson_lists__one__title
+          = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+        .lesson_lists__one__number
+          = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
 
-%p
-最終
-- @last_task.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-    = lesson.posts.where(input_or_output:0).length
-%p
-%p
-.know
-知りたい---------------------------------------------------------
-%p
-基礎
-lesson1
-- @base1.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
-    = lesson.posts.where(input_or_output:1).length
-lesson2
-- @base2.each do |lesson|
-  .title
-    = link_to "#{lesson.title}",outputs_lesson_path(lesson.id)
-    = lesson.posts.where(input_or_output:1).length
-lesson3
-- @base3.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
-    = lesson.posts.where(input_or_output:1).length
-lesson4
-- @base4.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
-    = lesson.posts.where(input_or_output:1).length
 
-%p
-応用
-%p
-最終
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-# %p
+-# 教えたい
+-# %p
+-# 基礎
+-# lesson1
+
+-# lesson2
+-# - @base2.each do |lesson|
+-#   .title
+-#     = link_to "#{lesson.title}",inputs_lesson_path(lesson.id)
+-#     = lesson.posts.where(input_or_output:0).length
+-# %p
+-# 応用
+-# lesson1
+-# - @development1.each do |lesson|
+-#   .title
+-#     = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+-#     = lesson.posts.where(input_or_output:0).length
+
+-# %p
+-# 最終
+-# - @last_task.each do |lesson|
+-#   .title
+-#     = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+-#     = lesson.posts.where(input_or_output:0).length
+-# %p
+-# %p
+-# .know
+-# 知りたい---------------------------------------------------------
+-# %p
+-# 基礎
+-# lesson1
+-# - @base1.each do |lesson|
+-#   .title
+-#     = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
+-#     = lesson.posts.where(input_or_output:1).length
+-# lesson2
+-# - @base2.each do |lesson|
+-#   .title
+-#     = link_to "#{lesson.title}",outputs_lesson_path(lesson.id)
+-#     = lesson.posts.where(input_or_output:1).length
+-# lesson3
+-# - @base3.each do |lesson|
+-#   .title
+-#     = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
+-#     = lesson.posts.where(input_or_output:1).length
+-# lesson4
+-# - @base4.each do |lesson|
+-#   .title
+-#     = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
+-#     = lesson.posts.where(input_or_output:1).length
+
+-# %p
+-# 応用
+-# %p
+-# 最終

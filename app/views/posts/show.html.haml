@@ -1,8 +1,15 @@
 -# ===================================
 -# 投稿詳細
--# ===================================
-= @post.title
-= @post.content
-教える人
-= @slack
-= @post.input_or_output
+-# ==================================
+.post_form#preview
+  .form
+    .form__title
+      .title_field
+        = @post.title
+    .form__content
+      .content_field
+        = toc(@post.content) 
+        = markdown(@post.content)
+    .form__btns
+      .slack_display
+        = "Slack      :     #{@slack}"

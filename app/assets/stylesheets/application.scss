@@ -19,6 +19,7 @@
 @import "modules/flash";
 @import "posts";
 @import "modules/header";
+@import "lessons";
 @import 'rouge';
 
 * {
@@ -38,7 +39,6 @@ color: black;}
     margin-top: 50px;
     margin-bottom: 50px;
     width: 100%;
-    background-color: pink;
     height:calc(100% - 100px);
     overflow:scroll;
   }
