@@ -8,10 +8,8 @@
         = f.text_field :title, placeholder: "タイトル",class: "title_field"
       .form__content
         = f.text_area :content, placeholder: "マークダウン記法を用いてコードブロックを挿入することができます。画像を投稿する場合はgyazonのURLを貼り付けてください。",class: "content_field"
-        = f.hidden_field :lesson_id, value: params[:lesson_id]
-        = f.hidden_field :start_input_or_output, value: 1
-        = f.hidden_field :input_or_output, value: 1
-        = f.hidden_field :next_output_user_id, value: current_user.id
+      = f.hidden_field :lesson_id, value: params[:lesson_id]
+      = f.hidden_field :start_input_or_output, value: 1
       .form__btns
         .preview_btn
           プレビュー

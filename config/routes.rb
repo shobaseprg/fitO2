@@ -27,14 +27,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:new,:create]
   end
 
-  resources :posts,only: :show  do
-    collection do
-      get "new_input"
-    end
-    member do
-      post "create_input"
-    end
-  end
+  resources :posts,only: :show 
 
   resources :articles do
     collection do
