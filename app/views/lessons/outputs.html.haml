@@ -14,4 +14,4 @@
           = toc(post.content) 
           = markdown(post.content)
     .create_btn
-      = link_to "「質問」を投稿する","#"
+      = link_to "「質問」を投稿する",new_lesson_input_post_path(@lesson.id)

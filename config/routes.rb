@@ -25,7 +25,9 @@ Rails.application.routes.draw do
       get "outputs"
     end
     resources :posts, only: [:new,:create]
+    resources :input_posts, only: [:new,:create]
   end
+
 
   resources :posts,only: :show 
 

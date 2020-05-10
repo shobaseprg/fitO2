@@ -1,15 +1,15 @@
 -# ===================================
--# 教えます投稿フォーム
+-# 質問投稿フォーム
 -# ===================================
 .post_form#mark_down
   .form
-    = form_with model: @post, url: {controller: 'posts', action: 'create' },local: true do |f|
+    = form_with model: @post, url: {controller: 'input_posts', action: 'create' },local: true do |f|
       .form__title
-        = f.text_field :title, placeholder: "タイトル（教えたい内容）",class: "title_field"
+        = f.text_field :title, placeholder: "タイトル（質問したいこと）",class: "title_field"
       .form__content
         = f.text_area :content, placeholder: "マークダウン記法を用いてコードブロックを挿入することができます。画像を投稿する場合はgyazonのURLを貼り付けてください。",class: "content_field"
         = f.hidden_field :lesson_id, value: params[:lesson_id]
-        = f.hidden_field :start_input_or_output, value: 1
+        = f.hidden_field :start_input_or_output, value: 0
       .form__btns
         .preview_btn
           プレビュー
@@ -26,6 +26,3 @@
       #md_btn
         記入する
 
-
-  
-  
