@@ -5,11 +5,20 @@
     %title FitO2
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    -# = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    -# = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
   %body
-    = render 'layouts/notifications'
-    = render partial: "layouts/header"
-    .main_content
-      = yield
-      
+    .wrapper 
+      = render 'layouts/notifications'
+      = render partial: "layouts/header"
+      .main-content
+        = yield
+      .footer
+        .footer-btn.back
+          %button{:onclick => "history.back()", :type => "button"} 戻る
+        .footer-btn.home
+          = link_to "ホームに戻る", root_path
+        .footer-btn.foword
+          %button{:onclick => "history.forward()", :type => "button"} 進む

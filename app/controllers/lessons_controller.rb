@@ -6,6 +6,7 @@ class LessonsController < ApplicationController
 
   def inputs
     @input_posts = Post.where(lesson_id: params[:id])
+    @lesson_id = params[:id]
   end
 
   def outputs

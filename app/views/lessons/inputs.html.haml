@@ -1,2 +1,7 @@
+
 - @input_posts.each do |post|
-  = post.title
+  .title
+    = post.title
+  = toc(post.content) 
+  = markdown(post.content)
+= link_to "教えます投稿を作る",new_lesson_post_path(@lesson_id)
