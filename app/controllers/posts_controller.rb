@@ -17,12 +17,9 @@ def create
       redirect_to new_lesson_post_path(params[:lesson_id])
     end
 end
-# ===================================
-# マークダウンプレビュー
-# ===================================
-def preview
-end
 
+def show
+end
 
 private
   def post_params

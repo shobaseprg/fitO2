@@ -24,12 +24,10 @@ Rails.application.routes.draw do
       get "inputs"
       get "outpus"
     end
-    resources :posts do
-      collection do
-        get "preview"
-      end
-    end
+    resources :posts, only: [:new,:create]
   end
+
+  resources :posts,only: :show 
 
   namespace :api, format: 'json' do
     get 'articles/preview'

@@ -8,7 +8,7 @@
       =  "質問一覧  ＞  #{@category}  ＞  LESSON.#{@lesson.lesson_no} ＞ #{@lesson.title}"
     - @input_posts.each do |post|
       .one_post
-        = link_to "",root_path
+        = link_to "",post_path(post.id)
         .one_post__title
           = post.title
         .one_post__content
