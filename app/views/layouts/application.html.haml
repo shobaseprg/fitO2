@@ -16,4 +16,9 @@
       .main-content
         = yield
       .footer
-      
+        .footer-btn.back
+          %button{:onclick => "history.back()", :type => "button"} 戻る
+        .footer-btn.home
+          = link_to "ホームに戻る", root_path
+        .footer-btn.foword
+          %button{:onclick => "history.forward()", :type => "button"} 進む
