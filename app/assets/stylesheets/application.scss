@@ -14,8 +14,8 @@
  *= require_self
  */
 
-@import "rmodules/reset";
-@import "mixin/btn";
+@import "modules/reset";
+@import "mixin/forms";
 @import "modules/flash";
 @import "posts";
 @import "modules/header";
@@ -46,7 +46,6 @@
     width: 100%;
     height: 50px;
     border: solid;
-
   }
 
 }
