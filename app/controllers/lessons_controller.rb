@@ -36,9 +36,23 @@ class LessonsController < ApplicationController
       case @lesson.base_or_development
         when 0 then
           @category = "基礎"
+        when 1 then
+          @category = "応用"
+        when 2 then
+          @category = "最終"
         end
   end
 
   def outputs
+    @output_posts = Post.where(lesson_id: params[:id]).where(input_or_output: 1)
+    @lesson = Lesson.find(params[:id])
+      case @lesson.base_or_development
+      when 0 then
+        @category = "基礎"
+      when 1 then
+        @category = "応用"
+      when 2 then
+        @category = "最終"
+      end
   end
 end
