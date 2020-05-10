@@ -5,7 +5,7 @@
 .post_all
   .post_all_inner
     .categoly
-      =  "質問一覧"
+      =  "質問一覧  ＞  #{@category}  ＞  LESSON.#{@lesson.lesson_no} ＞ #{@lesson.title}"
     - @input_posts.each do |post|
       .one_post
         = link_to "",root_path
@@ -15,4 +15,4 @@
           = toc(post.content) 
           = markdown(post.content)
     .create_btn
-      = link_to "「教えます」を投稿する",new_lesson_post_path(@lesson_id)
+      = link_to "「教えます」を投稿する",new_lesson_post_path(@lesson.id)
