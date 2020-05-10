@@ -1,7 +1,17 @@
 
-- @input_posts.each do |post|
-  .title
-    = post.title
-  = toc(post.content) 
-  = markdown(post.content)
-= link_to "教えます投稿を作る",new_lesson_post_path(@lesson_id)
+-# ===================================
+-# 質問一覧
+-# ===================================
+.post_all
+  .post_all_inner
+    .categoly
+      =  "質問一覧"
+    - @input_posts.each do |post|
+      .one_post
+        .one_post__title
+          = post.title
+        .one_post__content
+          = toc(post.content) 
+          = markdown(post.content)
+    .create_btn
+      = link_to "「教えます」を投稿する",new_lesson_post_path(@lesson_id)
