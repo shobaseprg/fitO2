@@ -6,51 +6,26 @@ lesson1
 - @base1.each do |lesson|
   .title
     = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+    = lesson.posts.where(input_or_output:0).length
 lesson2
 - @base2.each do |lesson|
   .title
     = link_to "#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson3
-- @base3.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson4
-- @base4.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson5
-- @base5.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson6
-- @base6.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson7
-- @base7.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson8
-- @base8.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson9
-- @base9.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-
+    = lesson.posts.where(input_or_output:0).length
 %p
 応用
 lesson1
 - @development1.each do |lesson|
   .title
     = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+    = lesson.posts.where(input_or_output:0).length
 
 %p
 最終
 - @last_task.each do |lesson|
   .title
     = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+    = lesson.posts.where(input_or_output:0).length
 %p
 %p
 .know
@@ -61,18 +36,23 @@ lesson1
 - @base1.each do |lesson|
   .title
     = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
+    = lesson.posts.where(input_or_output:1).length
 lesson2
 - @base2.each do |lesson|
   .title
     = link_to "#{lesson.title}",outputs_lesson_path(lesson.id)
+    = lesson.posts.where(input_or_output:1).length
 lesson3
 - @base3.each do |lesson|
   .title
     = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
+    = lesson.posts.where(input_or_output:1).length
 lesson4
 - @base4.each do |lesson|
   .title
     = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
+    = lesson.posts.where(input_or_output:1).length
+
 %p
 応用
 %p
