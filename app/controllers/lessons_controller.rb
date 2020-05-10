@@ -5,7 +5,7 @@ class LessonsController < ApplicationController
   end
 
   def inputs
-    @input_posts = Post.where(lesson_id: params[:id])
+    @input_posts = Post.where(lesson_id: params[:id]).where(input_or_output: 0)
     @lesson = Lesson.find(params[:id])
       case @lesson.base_or_development
         when 0 then
