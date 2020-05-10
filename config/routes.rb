@@ -29,8 +29,10 @@ Rails.application.routes.draw do
 
   resources :posts,only: :show 
 
-  namespace :api, format: 'json' do
-    get 'articles/preview'
+  resources :articles do
+    collection do
+      get 'preview'
+    end
   end
 
 end
