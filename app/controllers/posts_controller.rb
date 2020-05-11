@@ -54,6 +54,10 @@ class PostsController < ApplicationController
 # ===================================
 def myshow
   @post = Post.find(params[:id])
+  @inputer = User.find_by(id: @post.input_user_id) #第一質問者
+  @outputer = User.find_by(id:@post.output_user_id) #第一回答者
+  @next_outputer = User.find_by(id:@post.next_output_user_id) #第2回答者または、教えます作成者
+  @next_inputer = User.find_by(id:@post.next_input_user_id) #第2質問者
 end
 
 # ===================================

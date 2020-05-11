@@ -1,5 +1,5 @@
 // ===================================
-// 投稿画面・詳細表示
+// 投稿画面・詳細表示・マイページ詳細
 // ===================================
 .post_form{
   margin: 0 auto;
@@ -128,4 +128,11 @@
 
 .hidden{
   display: none;
+}
+
+.history{
+  margin: 0 auto;
+  margin-top: 50px;
+  border: solid;
+  width: 700px;
 }
