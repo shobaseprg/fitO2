@@ -11,9 +11,8 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def
-    show
-    redirect_to root_path
+  def show
+
   end
   
 end

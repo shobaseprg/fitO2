@@ -9,6 +9,7 @@
     - else 
       = link_to "オフにする", swich_users_path, method: :patch
     = link_to "パスワード変更",user_password_path, method: :post
+    = link_to "マイページ",user_path(current_user.id), method: :get
 
   - else
     = link_to "ログイン", new_user_session_path
