@@ -92,6 +92,40 @@
   }
 }
 
+
+.thanks_for_outputer{
+  margin-top: 30px;
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  line-height: 40px;
+  position: relative;
+  input[type= "number"]{
+    position: absolute;
+    right: 120px;
+    margin-left: 40px;
+    height: 40px;
+    width: 400px;
+    border: solid red;
+    border-radius: 10px;
+    line-height: 40px;
+    text-align: center;
+  }
+  input[type="submit"]{
+    position: absolute;
+    right: 0;
+    margin-left: 40px;
+    height: 40px;
+    width: 100px;
+    border: solid black;
+    border-radius: 10px;
+    line-height: 40px;
+    text-align: center;
+    background-color:yellow;
+  }
+
+}
+
 .hidden{
   display: none;
 }
