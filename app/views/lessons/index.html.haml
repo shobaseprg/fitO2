@@ -1,42 +1,72 @@
 .lesson_box
   .TABS
-    .first_tab#input_tab
+    .first_tab#outputer_first_tab
       教える
-    .first_tab#output_tab
+    .first_tab#intputer_first_tab
       質問する
-  .TABS
-    .second_tab
+  .TABS.second_tabs#outputer_second_tabs
+    .second_tab{data: {target: "1"}}
       基礎_おしえる
-    .second_tab
+    .second_tab{data: {target: "2"}}
       応用＿おしえる
-    .second_tab
+    .second_tab{data: {target: "3"}}
       最終課題＿おしえる
-  .TABS.none
-    .second_tab
+  .TABS.second_tabs#inputer_second_tabs.none
+    .second_tab{data: {target: "4"}}
       基礎＿しつもん
-    .second_tab
+    .second_tab{data: {target: "5"}}
       応用＿しつもん
-    .second_tab
+    .second_tab{data: {target: "6"}}
       最終課題
   -# ===================================
   -# lessonタブを作成
   -# ===================================
-  .TABS
+  .TABS.number_tabs.none{data: {target: "1"}}
     - i = 1
+    - n = 101
+    - while i < 10 do
+      .third_tab
+        = link_to "#{i}","#lesson#{n}"
+      - i += 1
+      - n += 1
+
+  .TABS.number_tabs.none{data: {target: "2"}}
+    - i = 1
+    - n = 201
     - while i < 15 do
       .third_tab
-        = link_to "#{i}","#lesson#{i}"
+        = link_to "#{i}","#lesson#{n}"
       - i += 1
+      - n += 1
+
+  .TABS.number_tabs.none{data: {target: "4"}}
+    - i = 1
+    - n = 401
+    - while i < 10 do
+      .third_tab
+        = link_to "#{i}","#lesson#{n}"
+      - i += 1
+      - n += 1
+
+  .TABS.number_tabs.none{data: {target: "5"}}
+    - i = 1
+    - n = 501
+    - while i < 15 do
+      .third_tab
+        = link_to "#{i}","#lesson#{n}"
+      - i += 1
+      - n += 1
     -# ===================================
     -# レッスン一覧を6通り作成
     -# ===================================
     -# ===================================
     -# 質問一覧
     -# ===================================  
-  #input_base
+  .lists.none{data: {target: "1"}}
     - i = 1
+    - n = 101
     - @bases.each do |base|
-      .lesson_lists{id: "lesson#{i}"}
+      .lesson_lists{id: "lesson#{n}"}
         .lesson_no
           = "lesson #{i}"
         - base.each do |lesson|
@@ -46,11 +76,13 @@
             .lesson_lists__one__number
               = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
       - i += 1
+      - n += 1
 
-  #input_development
+  .lists.none{data: {target: "2"}}
     - i = 1
+    - n = 201
     - @developments.each do |development|
-      .lesson_lists{id: "lesson#{i}"}
+      .lesson_lists{id: "lesson#{n}"}
         .lesson_no
           = "lesson #{i}"
         - development.each do |lesson|
@@ -60,9 +92,10 @@
             .lesson_lists__one__number
               = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
       - i += 1
+      - n += 1
 
-  #input_last_task
-    .lesson_lists
+  .lists.none{data: {target: "3"}}
+    .lesson_lists{id: "lesson#{i}"}
       .lesson_no
         最終課題
       - @last_task.each do |lesson|
@@ -75,10 +108,11 @@
     -# 教えます一覧
     -# ===================================  
       
-  #input_base
+  .lists.none{data: {target: "4"}}
     - i = 1
+    - n = 401
     - @bases.each do |base|
-      .lesson_lists{id: "lesson#{i}"}
+      .lesson_lists{id: "lesson#{n}"}
         .lesson_no
           = "lesson #{i}"
         - base.each do |lesson|
@@ -88,11 +122,13 @@
             .lesson_lists__one__number
               = "投稿数：#{lesson.posts.where(input_or_output:1).length}"
       - i += 1
+      - n += 1
 
-  #input_development
+  .lists.none{data: {target: "5"}}
     - i = 1
+    - n = 501
     - @developments.each do |development|
-      .lesson_lists{id: "lesson#{i}"}
+      .lesson_lists{id: "lesson#{n}"}
         .lesson_no
           = "lesson #{i}"
         - development.each do |lesson|
@@ -102,9 +138,10 @@
             .lesson_lists__one__number
               = "投稿数：#{lesson.posts.where(input_or_output:1).length}"
       - i += 1
+      - n += 1
 
-  #input_last_task
-    .lesson_lists
+  .lists.none{data: {target: "6"}}
+    .lesson_lists{id: "lesson#{i}"}
       .lesson_no
         最終課題
       - @last_task.each do |lesson|
