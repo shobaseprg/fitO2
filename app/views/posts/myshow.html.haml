@@ -6,6 +6,7 @@
     .form__title
       .title_field
         = @post.title
+        = "[id:#{@post.id}]"
     .form__content
       .content_field
         = toc(@post.content) 

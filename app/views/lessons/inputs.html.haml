@@ -11,6 +11,7 @@
         = link_to "",post_path(post.id)
         .one_post__title
           = post.title
+          = "[id:#{post.id}]"
         .one_post__content
           = toc(post.content) 
           = markdown(post.content)

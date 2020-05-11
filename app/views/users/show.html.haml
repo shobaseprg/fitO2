@@ -43,6 +43,7 @@
           = post.lesson.title
         .one_post__title
           = post.title
+          = "[id:#{post.id}]"
         .one_post__content
           = toc(post.content) 
           = markdown(post.content)
@@ -63,6 +64,7 @@
           = post.lesson.title
         .one_post__title
           = post.title
+          = "[id:#{post.id}]"
         .one_post__content
           = toc(post.content) 
           = markdown(post.content)
@@ -81,6 +83,7 @@
               = "最終"
           = "lesson:#{post.lesson.lesson_no}"
           = post.lesson.title
+          = "[id:#{post.id}]"
         .one_post__title
           = post.title
         .one_post__content
