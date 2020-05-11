@@ -133,6 +133,11 @@
 .history{
   margin: 0 auto;
   margin-top: 50px;
+  margin-bottom: 50px;
   border: solid;
   width: 700px;
+    .space{
+      height: 30px;
+      width: 100%;
+    }
 }

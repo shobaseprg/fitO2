@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   def update
     check_outputer_id = Post.find(params[:id]).next_output_user_id    # 投稿者のidを変数に格納
     if params[:post][:outputer_id].to_i == check_outputer_id    # 投稿者のidと入力のidが正しいかチェック
-      Post.find(params[:id]).update(input_or_output: 2)   # 投稿をクリアに更新
+      Post.find(params[:id]).update(input_or_output: 2,next_input_user_id: current_user.id)   # 投稿をクリアに更新,2次質問者に自分を格納
       output_user = User.find(check_outputer_id)  # 投稿者を変数に格納
       output_user.output_times += 1 # 投稿者のアウトプット回数を計上する
       output_user.save

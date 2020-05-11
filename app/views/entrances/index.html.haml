@@ -1,3 +1,27 @@
 - if user_signed_in?
-  = link_to "掲示板を見る",lessons_path
-  新着投稿一覧
+  .link_to_posts
+    = link_to "掲示板を見る",lessons_path
+  .new_posts
+    新着質問一覧
+  .post_all
+    .post_all_inner
+      - @new_posts.each do |post|
+        .one_post
+          = link_to "",post_path(post.id)
+          .one_post__title
+            - case post.lesson.base_or_development
+              - when 0 then
+                = "基礎"
+              - when 1 then
+                = "応用"
+              - when 2 then
+                = "最終"
+            = "lesson:#{post.lesson.lesson_no}"
+            = post.lesson.title
+            = "[id:#{post.id}]"
+          .one_post__title
+            = post.title
+          .one_post__content
+            = toc(post.content) 
+            = markdown(post.content)
+
