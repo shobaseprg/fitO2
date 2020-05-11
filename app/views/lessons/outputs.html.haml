@@ -12,6 +12,9 @@
           = post.title
           = "[id:#{post.id}]"
         .one_post__content
+          - if post.start_input_or_output == 0
+            .attention
+              この質問は解決しました！同じ質問がある方はお教えします！
           = toc(post.content) 
           = markdown(post.content)
         - if post.next_output_user_id == current_user.id  # 自分の教えます投稿の場合
