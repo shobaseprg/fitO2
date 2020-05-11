@@ -1,0 +1,2 @@
+module InputPostsHelper
+end

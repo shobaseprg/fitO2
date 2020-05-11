@@ -19,6 +19,7 @@
 @import "modules/flash";
 @import "posts";
 @import "modules/header";
+@import "lessons";
 @import 'rouge';
 
 * {
@@ -38,7 +39,6 @@ color: black;}
     margin-top: 50px;
     margin-bottom: 50px;
     width: 100%;
-    background-color: pink;
     height:calc(100% - 100px);
     overflow:scroll;
   }
@@ -59,10 +59,13 @@ color: black;}
         border-radius: 10px;
         text-align: center;
         font-size: 15px;
+        &:hover{
+          border:solid red;
+        }
       }
     }
 
-   .home{
+    .home{
       margin-left: 40px;
       margin-right: 40px;
       margin-top: 7px;
@@ -72,7 +75,18 @@ color: black;}
       border-radius: 10px;
       text-align: center;
       color: black;
-   }
+      position: relative;
+      &:hover{
+        border:solid red;
+      }
+      a{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        cursor: default;
+      }
+    }
   }
-
 }

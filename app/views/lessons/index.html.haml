@@ -1,79 +1,153 @@
-%p
-教えたい
-%p
-基礎
-lesson1
-- @base1.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson2
-- @base2.each do |lesson|
-  .title
-    = link_to "#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson3
-- @base3.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson4
-- @base4.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson5
-- @base5.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson6
-- @base6.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson7
-- @base7.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson8
-- @base8.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-lesson9
-- @base9.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+.lesson_box
+  .TABS
+    .first_tab#outputer_first_tab
+      教える
+    .first_tab#intputer_first_tab
+      質問する
+  .TABS.second_tabs#outputer_second_tabs
+    .second_tab{data: {target: "1"}}
+      基礎_おしえる
+    .second_tab{data: {target: "2"}}
+      応用＿おしえる
+    .second_tab{data: {target: "3"}}
+      最終課題＿おしえる
+  .TABS.second_tabs#inputer_second_tabs.none
+    .second_tab{data: {target: "4"}}
+      基礎＿しつもん
+    .second_tab{data: {target: "5"}}
+      応用＿しつもん
+    .second_tab{data: {target: "6"}}
+      最終課題
+  -# ===================================
+  -# lessonタブを作成
+  -# ===================================
+  .TABS.number_tabs.none{data: {target: "1"}}
+    - i = 1
+    - n = 101
+    - while i < 10 do
+      .third_tab
+        = link_to "#{i}","#lesson#{n}"
+      - i += 1
+      - n += 1
 
-%p
-応用
-lesson1
-- @development1.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+  .TABS.number_tabs.none{data: {target: "2"}}
+    - i = 1
+    - n = 201
+    - while i < 15 do
+      .third_tab
+        = link_to "#{i}","#lesson#{n}"
+      - i += 1
+      - n += 1
 
-%p
-最終
-- @last_task.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
-%p
-%p
-.know
-知りたい---------------------------------------------------------
-%p
-基礎
-lesson1
-- @base1.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
-lesson2
-- @base2.each do |lesson|
-  .title
-    = link_to "#{lesson.title}",outputs_lesson_path(lesson.id)
-lesson3
-- @base3.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
-lesson4
-- @base4.each do |lesson|
-  .title
-    = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
-%p
-応用
-%p
-最終
+  .TABS.number_tabs.none{data: {target: "4"}}
+    - i = 1
+    - n = 401
+    - while i < 10 do
+      .third_tab
+        = link_to "#{i}","#lesson#{n}"
+      - i += 1
+      - n += 1
+
+  .TABS.number_tabs.none{data: {target: "5"}}
+    - i = 1
+    - n = 501
+    - while i < 15 do
+      .third_tab
+        = link_to "#{i}","#lesson#{n}"
+      - i += 1
+      - n += 1
+    -# ===================================
+    -# レッスン一覧を6通り作成
+    -# ===================================
+    -# ===================================
+    -# 質問一覧
+    -# ===================================  
+  .lists.none{data: {target: "1"}}
+    - i = 1
+    - n = 101
+    - @bases.each do |base|
+      .lesson_lists{id: "lesson#{n}"}
+        .lesson_no
+          = "lesson #{i}"
+        - base.each do |lesson|
+          .lesson_lists__one
+            .lesson_lists__one__title
+              = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+            .lesson_lists__one__number
+              = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+      - i += 1
+      - n += 1
+
+  .lists.none{data: {target: "2"}}
+    - i = 1
+    - n = 201
+    - @developments.each do |development|
+      .lesson_lists{id: "lesson#{n}"}
+        .lesson_no
+          = "lesson #{i}"
+        - development.each do |lesson|
+          .lesson_lists__one
+            .lesson_lists__one__title
+              = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+            .lesson_lists__one__number
+              = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+      - i += 1
+      - n += 1
+
+  .lists.none{data: {target: "3"}}
+    .lesson_lists{id: "lesson#{i}"}
+      .lesson_no
+        最終課題
+      - @last_task.each do |lesson|
+        .lesson_lists__one
+          .lesson_lists__one__title
+            = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
+          .lesson_lists__one__number
+            = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+    -# ===================================
+    -# 教えます一覧
+    -# ===================================  
+      
+  .lists.none{data: {target: "4"}}
+    - i = 1
+    - n = 401
+    - @bases.each do |base|
+      .lesson_lists{id: "lesson#{n}"}
+        .lesson_no
+          = "lesson #{i}"
+        - base.each do |lesson|
+          .lesson_lists__one
+            .lesson_lists__one__title
+              = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
+            .lesson_lists__one__number
+              = "投稿数：#{lesson.posts.where(input_or_output:1).length}"
+      - i += 1
+      - n += 1
+
+  .lists.none{data: {target: "5"}}
+    - i = 1
+    - n = 501
+    - @developments.each do |development|
+      .lesson_lists{id: "lesson#{n}"}
+        .lesson_no
+          = "lesson #{i}"
+        - development.each do |lesson|
+          .lesson_lists__one
+            .lesson_lists__one__title
+              = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
+            .lesson_lists__one__number
+              = "投稿数：#{lesson.posts.where(input_or_output:1).length}"
+      - i += 1
+      - n += 1
+
+  .lists.none{data: {target: "6"}}
+    .lesson_lists{id: "lesson#{i}"}
+      .lesson_no
+        最終課題
+      - @last_task.each do |lesson|
+        .lesson_lists__one
+          .lesson_lists__one__title
+            = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
+          .lesson_lists__one__number
+            = "投稿数：#{lesson.posts.where(input_or_output:1).length}"
+      

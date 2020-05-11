@@ -12,6 +12,7 @@ def create
     post = Post.new(output_post_params)
     if post.save
       redirect_to root_path
+      flash[:notice] = "「教えたいこと」を投稿しました"
     else 
       flash[:alert] = "タイトルと内容どちらも入力してください"
       redirect_to new_lesson_post_path(params[:lesson_id])
