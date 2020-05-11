@@ -49,6 +49,25 @@ class PostsController < ApplicationController
       end
   end
 
+# ===================================
+# マイページからの詳細表示用
+# ===================================
+def myshow
+  @post = Post.find(params[:id])
+end
+
+# ===================================
+# アウトプットへの更新よう
+# ===================================
+def gooutput
+  if current_user.id == params[:post][:outputer_id].to_i #自分の名前は弾く
+    flash[:alert] = "それは自分のidです"
+    redirect_to myshow_post_path(params[:id])
+    binding.pry
+  end
+end
+
+
 private
 
   def output_post_params

@@ -1,0 +1,24 @@
+-# ===================================
+-# マイページからの投稿詳細
+-# ==================================
+.post_form#preview
+  .form
+    .form__title
+      .title_field
+        = @post.title
+    .form__content
+      .content_field
+        = toc(@post.content) 
+        = markdown(@post.content)
+    .form__btns
+
+
+    -# ==================================
+    -# 質問の場合、名前入力箇所
+    -# ==================================
+    - if @post.input_or_output == 0 && @post.input_user_id == current_user.id 
+      .thanks_for_outputer
+        = form_with model: @post, url: {controller: 'posts', action: 'gooutput'},local: true do |f|
+          .form__title
+            = f.number_field :outputer_id , placeholder: "教えてもらった人のidを入力してください"
+            = f.submit "THANKS"
