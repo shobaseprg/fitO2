@@ -11,9 +11,14 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def
-    show
-    redirect_to root_path
+
+# ===================================
+# マイページ
+# ===================================
+  def show
+    @my_input_posts = Post.where(input_or_output: 0).where(input_user_id:current_user.id)
+    @my_output_posts = Post.where(input_or_output: 1).where(next_output_user_id:current_user.id)
+    @my_clear_posts = Post.where(input_or_output: 2).where(next_output_user_id:current_user.id)
   end
   
 end
