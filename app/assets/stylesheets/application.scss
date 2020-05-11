@@ -51,6 +51,7 @@ color: black;}
     border: solid;
     display: flex;
     justify-content: center;
+    background-color: lightgray;
     .footer-btn{
       button{
         margin-top: 7px;
@@ -60,15 +61,12 @@ color: black;}
         border-radius: 10px;
         text-align: center;
         font-size: 15px;
-        &:hover{
-          border:solid red;
-        }
+        margin-left:10px;
       }
     }
 
     .home{
-      margin-left: 40px;
-      margin-right: 40px;
+      margin-left: 10px;
       margin-top: 7px;
       height: 30px;
       width: 200px;
@@ -76,6 +74,7 @@ color: black;}
       border-radius: 10px;
       text-align: center;
       color: black;
+      background-color: white;
       position: relative;
 
       a{
