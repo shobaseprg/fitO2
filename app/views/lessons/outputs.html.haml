@@ -13,7 +13,7 @@
         .one_post__content
           = toc(post.content) 
           = markdown(post.content)
-        - if post.next_output_user_id == current_user.id  # 自分の投稿の場合
+        - if post.next_output_user_id == current_user.id  # 自分の教えます投稿の場合
           .your_display
             これはあなたの投稿です。
     .create_btn

@@ -25,6 +25,9 @@ class PostsController < ApplicationController
     check_outputer_id = Post.find(params[:id]).next_output_user_id    # 投稿者のidを変数に格納
     if params[:post][:outputer_id].to_i == check_outputer_id    # 投稿者のidと入力のidが正しいかチェック
       Post.find(params[:id]).update(input_or_output: 2)   # 投稿をクリアに更新
+      output_user = User.find(check_outputer_id)  # 投稿者を変数に格納
+      output_user.output_times += 1 # 投稿者のアウトプット回数を計上する
+      output_user.save
       flash[:notice] = "この投稿はクリアされました"
       redirect_to root_path
     else
