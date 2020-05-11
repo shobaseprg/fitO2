@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :posts,only: :show 
+  resources :posts,only: [:show,:update] 
 
   resources :articles do
     collection do
