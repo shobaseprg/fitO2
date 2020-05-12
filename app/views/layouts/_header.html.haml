@@ -20,8 +20,6 @@
       .header_btn
         = link_to "エディット",edit_user_registration_path
       .header_btn
-        = link_to "パスワード変更",user_password_path, method: :post
-      .header_btn
         = link_to "ログアウト",destroy_user_session_path, method: :delete
 
   - else
@@ -30,4 +28,5 @@
         = link_to "ログイン", new_user_session_path
       .header_btn
         = link_to "サインアップ",new_user_registration_path
-    
+      .header_btn
+        = link_to "パスワード変更",user_password_path, method: :post

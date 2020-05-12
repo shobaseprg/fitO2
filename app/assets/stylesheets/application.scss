@@ -87,7 +87,7 @@ color: black;}
   }
   .hint-box{
     height: 400px;
-    width: 400px;
+    width: 600px;
     border-radius: 10px;
     background-color: pink;
     position: fixed;
@@ -95,6 +95,7 @@ color: black;}
     left: 0;
     right: 0;
     margin: auto;
+    font-size: 7px;
 
     .cancel{
       border: solid red;
@@ -104,7 +105,7 @@ color: black;}
       border-radius: 50px;
       text-align: center;
       line-height: 26px;
-      margin-left: 310px;
+      margin-left: 510px;
       margin-top: 5px;
     }
     .hint-inner{
