@@ -1,6 +1,66 @@
 .header{
-  height: 50px;
+  height: 70px;
   width: 100%;
+  background: linear-gradient(to right,black,blue);
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 30px;
+  z-index: 100;
+  .fitO_box{
+    margin-left: 30px;
+    display: flex;
+    border-bottom: solid white;
+    border: solid gray;
+    border-radius: 5px;
+    width: 205px;
+    height: 50px;
+  .fitO{
+    color: white;
+    font-size: 30px;
+  }
+  .fitO_sub{
+    position: absolute;
+    left: 80px;
+    color:gray;
+    font-size: 8px;
+    width: 200px;
+  }
+}
 
-  border: solid;
+.swith{
+  border: solid black;
+  border-radius: 60px;
+  height: 40px;
+  width: 60px;
+  margin-left: 40px;
+  background-color:gray;
+  text-align: center;
+  line-height: 36px;
+}
+.on{
+  background-color:red;
+  a{color: white;}
+}
+.off{
+  background-color:gray;
+
+}
+
+
+  .header_btns{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    .header_btn{
+      text-align: center;
+      margin-right: 20px;
+      width: 120px;
+      color: white;
+      background-color:lightgray;
+      border: solid gray;
+      border-radius: 10px;
+      a{color:black;}
+    }
+  }
 }
