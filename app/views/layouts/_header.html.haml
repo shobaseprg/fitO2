@@ -14,16 +14,15 @@
         = link_to "ON", swich_users_path, method: :patch
     .header_btns
       .header_btn
-        = link_to "マイページ",user_path(current_user.id), method: :get
-      .header_btn
-        = link_to "ランキング","#"
+        = link_to "ログアウト",destroy_user_session_path, method: :delete
       .header_btn
         = link_to "エディット",edit_user_registration_path
       .header_btn
+        = current_user.name
+      .header_btn
         = link_to "パスワード変更",user_password_path, method: :post
       .header_btn
-        = link_to "ログアウト",destroy_user_session_path, method: :delete
-
+        = link_to "マイページ",user_path(current_user.id), method: :get
   - else
     .header_btns
       .header_btn
