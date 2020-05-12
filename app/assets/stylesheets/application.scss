@@ -30,14 +30,15 @@
 a{text-decoration: none;
 color: black;}
 .wrapper{
+  position: relative;
   width: 100vw;
   height: 100vh;
-
 
   .main-content{
     position: absolute;
     top:0;
     padding-top: 70px;
+    // margin-bottom: 50px;
     width: 100%;
     height:calc(100% - 50px);
     overflow:scroll;
@@ -86,13 +87,4 @@ color: black;}
       }
     }
   }
-.hint{
-  position: absolute;
-  top :50px;
-  height: 500px;
-  width: 500px;
-  background-color: pink;
-  border-radius: 10px;
-  margin: 0 auto;
-}
 }
