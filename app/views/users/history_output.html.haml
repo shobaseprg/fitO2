@@ -1,0 +1,45 @@
+.post_all
+  .post_all_inner
+    .history_category
+      アウトプット履歴
+      .history_inner
+        .history_sub_category
+          質問投稿・教えます投稿から
+        - @second_output_posts_from_mypost.each do |post|
+          .history_onebox
+            = link_to "",myshow_post_path(post.id)
+            .history_oneline
+              - case post.lesson.base_or_development
+                - when 0 then
+                  = "基礎"
+                - when 1 then
+                  = "応用"
+                - when 2 then
+                  = "最終"
+              = "lesson:#{post.lesson.lesson_no}"
+              = post.title
+            .history_oneline
+              = "教えた人：[name]#{User.find(post.next_input_user_id).name}[slack]#{User.find(post.next_input_user_id).slack}"
+            .history_oneline
+              = "教えた日時：#{post.updated_at}".gsub(/\+0900/,"" )
+      .history_inner
+        .history_sub_category
+          掲示板から
+        - @first_output_posts_from_question.each do |post|
+          .history_onebox
+            = link_to "",myshow_post_path(post.id)
+            .history_oneline
+              - case post.lesson.base_or_development
+                - when 0 then
+                  = "基礎"
+                - when 1 then
+                  = "応用"
+                - when 2 then
+                  = "最終"
+              = "lesson:#{post.lesson.lesson_no}"
+              = post.title
+            .history_oneline
+              = "教えた人：[name]#{User.find(post.input_user_id).name}[slack]#{User.find(post.input_user_id).slack}"
+            .history_oneline
+              = "教えた日時：#{post.first_update_date}".gsub(/\+0900/,"" )
+              -# inputからouput移行した日時

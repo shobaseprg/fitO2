@@ -25,16 +25,19 @@ class UsersController < ApplicationController
 # input履歴表示用
 # ===================================
   def history_input
-    @first_input_posts = Post.where(input_user_id: current_user.id).where(input_or_output:1)
-    # 質問から教えますに移行した投稿を格納
+    @first_input_posts = Post.where(input_user_id: current_user.id).where.not(input_or_output:0)
+    # 質問から教えますに移行した投稿を格納([おしえます]と[fito]の場合がありえる)
     @second_input_posts = Post.where(next_input_user_id: current_user.id,input_or_output:2)
-    # 教えますからfitOに移行した投稿を格納
+    # 教えます掲示板からfitOに移行した投稿を格納(fitoの場合しかない)
   end
 
+  # ===================================
+# output履歴表示用
+# ===================================
   def history_output
-    @first_input_posts = Post.where(input_user_id: current_user.id).where(input_or_output:1)
-    # 質問から教えますに移行した投稿を格納
-    @second_input_posts = Post.where(next_input_user_id: current_user.id,input_or_output:2)
-    # 教えますからfitOに移行した投稿を格納
+    @first_output_posts_from_question = Post.where(output_user_id: current_user.id).where.not(input_or_output:0)
+    # 掲示板から教えた場合に移行した投稿を格納
+    @second_output_posts_from_mypost = Post.where(next_output_user_id: current_user.id,input_or_output:2)
+    # 掲示板から教えた投稿を格納
   end
 end
