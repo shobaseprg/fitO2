@@ -17,13 +17,14 @@
     - if resource.errors.full_messages_for(:period)[0]
       あなたの所属する期を半角数字で入力してください。
   .field
-    = f.label "学習スタイル"
-    %br/
-    = f.select :style, [["選択してください", 0],["短期", 1],["夜間", 2]]
-    = resource.errors.full_messages_for(:style)[0]
+    .style_checkbox
+      = f.label "学習スタイル"
+      = f.select :style, [["選択してください", 0],["短期", 1],["夜間", 2]]
+      - if resource.errors.full_messages_for(:style)[0]
+        学習スタイルを選択してください
   .field
+    .team_checkbox
     = f.label "チーム名"
-    %br/
     = f.collection_select :team_id, Team.all, :id, :name ,{prompt: "選択してください"}
     - if resource.errors.full_messages_for(:team_id)[0]
       チーム名を選択してください。

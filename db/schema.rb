@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_05_07_143915) do
     t.integer "next_output_user_id"
     t.integer "input_or_output"
     t.integer "start_input_or_output"
+    t.string "first_update_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
