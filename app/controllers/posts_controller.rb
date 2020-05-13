@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   def update
     check_outputer_id = Post.find(params[:id]).next_output_user_id    # 投稿者のidを変数に格納
     if params[:post][:outputer_id].to_i == check_outputer_id    # 投稿者のidと入力のidが正しいかチェック
-      Post.find(params[:id]).update(input_or_output: 2)   # 投稿をクリアに更新
+      Post.find(params[:id]).update(input_or_output: 2,next_input_user_id: current_user.id)   # 投稿をクリアに更新,2次質問者に自分を格納
       output_user = User.find(check_outputer_id)  # 投稿者を変数に格納
       output_user.output_times += 1 # 投稿者のアウトプット回数を計上する
       output_user.save
@@ -48,6 +48,46 @@ class PostsController < ApplicationController
         @slack = User.find(@post.next_output_user_id).slack
       end
   end
+
+# ===================================
+# マイページからの詳細表示用
+# ===================================
+def myshow
+  @post = Post.find(params[:id])
+  @inputer = User.find_by(id: @post.input_user_id) #第一質問者
+  @outputer = User.find_by(id:@post.output_user_id) #第一回答者
+  @next_outputer = User.find_by(id:@post.next_output_user_id) #第2回答者または、教えます作成者
+  @next_inputer = User.find_by(id:@post.next_input_user_id) #第2質問者
+end
+
+# ===================================
+# アウトプットへの更新よう
+# ===================================
+def gooutput
+  @post = Post.find(params[:id])
+  if current_user.id == params[:post][:outputer_id].to_i #自分のidは弾く
+    flash[:alert] = "それは自分のidです"
+    redirect_to myshow_post_path(params[:id]) 
+    return
+  else
+    if User.find_by(id: params[:post][:outputer_id]) == nil#存在しないidは弾く
+      flash[:alert] = "そのユーザーは存在しません"
+      redirect_to myshow_post_path(params[:id])
+      return
+    else
+      @post.update(input_or_output: 1,output_user_id: params[:post][:outputer_id],next_output_user_id:current_user.id)
+      # この質問をアウトプットへ移行、output_user_idに教えてもらった人のid,next_output_user_idに自分のidを格納
+      user = User.find(params[:post][:outputer_id])
+      user.output_times += 1
+      user.save
+      # 教えてくれた人のアウトプット回数を計上
+      flash[:notice] = "この投稿は「教えます」一覧に移行しました"
+      redirect_to root_path
+
+    end
+  end
+end
+
 
 private
 

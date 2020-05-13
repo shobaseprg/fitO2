@@ -1,0 +1,136 @@
+-# ===================================
+-# マイページからの投稿詳細
+-# ==================================
+.post_form#preview
+  .form
+    .form__title
+      .title_field
+        = @post.title
+        = "[id:#{@post.id}]"
+    .form__content
+      .content_field
+        = toc(@post.content) 
+        = markdown(@post.content)
+    .form__btns
+
+
+    -# ==================================
+    -# 質問の場合、名前入力箇所
+    -# ==================================
+    - if @post.input_or_output == 0 && @post.input_user_id == current_user.id 
+      .thanks_for_outputer
+        = form_with model: @post, url: {controller: 'posts', action: 'gooutput'},local: true do |f|
+          .form__title
+            = f.number_field :outputer_id , placeholder: "教えてもらった人のidを入力してください"
+            = f.submit "THANKS"
+            
+      -# ==================================
+      -# 質問の場合の履歴
+      -# ==================================
+      .history
+        履歴：
+        .history-content
+          .block
+            = "[質問作成日] #{@post.created_at.to_s(:datetime_jp)}"
+          .block  
+            = "[作成者]#{@inputer.name}"
+          .block
+            ="[作成者]#{@inputer.slack}"
+
+      -# ==================================
+      -# 質問から教えますへ遷移した場合の場合の履歴
+      -# ==================================
+    - elsif @post.input_or_output == 1 && @post.start_input_or_output == 0
+
+      .history
+        履歴：
+        .history-content
+          .block
+            = "[質問作成日] #{@post.created_at.to_s(:datetime_jp)}"
+          .block  
+            = "[作成者]#{@inputer.name}"
+          .block
+            ="[作成者slack]#{@inputer.slack}"
+          .space
+          .block  
+            = "[回答者]#{@outputer.name}"
+          .block
+            ="[回答者slack]#{@outputer.slack}"
+
+      -# ==================================
+      -# fito場合の場合の履歴
+      -# ================================== 
+    - elsif @post.input_or_output == 2 && @post.start_input_or_output == 0
+
+      .history
+        履歴：
+        .history-content
+          .block
+            = "[質問作成日] #{@post.created_at.to_s(:datetime_jp)}"
+          .block  
+            = "[作成者]#{@inputer.name}"
+          .block
+            ="[作成者slack]#{@inputer.slack}"
+
+          .space
+          .block  
+            = "[回答者]#{@outputer.name}"
+          .block
+            ="[回答者slack]#{@outputer.slack}"
+
+          .space
+          .block  
+            = "[２次回答者]#{@next_outputer.name}"
+          .block
+            = "[回答者slack]#{@outputer.slack}"
+
+          .space
+          .block
+            = "[fitO] #{@post.updated_at.to_s(:datetime_jp)}"
+          .block  
+            = "[２次質問者]#{@next_inputer.name}"
+          .block
+            = "[2次質問者slack]#{@next_inputer.slack}"
+
+      -# ==================================
+      -# 直接「教えます」に投稿したもの
+      -# ================================== 
+    - elsif @post.input_or_output == 1 && @post.start_input_or_output == 1
+      .history
+        履歴：
+        .history-content
+          .block
+            = "[「教えます」作成日] #{@post.created_at.to_s(:datetime_jp)}"
+
+          .space
+          .block  
+            = "[「教えます」作成者]#{@next_outputer.name}"
+          .block
+            = "[「教えます」作成者slack]#{@next_outputer.slack}"
+      -# ==================================
+      -# 直接「教えます」からクリアした投稿
+      -# ================================== 
+    - elsif @post.input_or_output == 2 && @post.start_input_or_output == 1
+      .history
+        履歴：
+        .history-content
+          .block
+            = "[「教えます」作成日] #{@post.created_at.to_s(:datetime_jp)}"
+          .block  
+            = "[「教えます」作成者]#{@next_outputer.name}"
+          .block
+            = "[「教えます」作成者slack]#{@next_outputer.slack}"
+
+          .space
+          .block  
+            = "[回答者]#{@next_outputer.name}"
+          .block
+            = "[回答者slack]#{@next_outputer.slack}"
+
+          .space
+          .block
+            = "[fitO] #{@post.updated_at.to_s(:datetime_jp)}"
+          .block  
+            = "[質問者]#{@next_inputer.name}"
+          .block
+            = "[質問者slack]#{@next_inputer.slack}"

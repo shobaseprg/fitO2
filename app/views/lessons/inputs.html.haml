@@ -11,11 +11,15 @@
         = link_to "",post_path(post.id)
         .one_post__title
           = post.title
+          = "[id:#{post.id}]"
         .one_post__content
           = toc(post.content) 
           = markdown(post.content)
         - if post.input_user_id == current_user.id  # 自分の質問投稿の場合
           .your_display
             これはあなたの投稿です。
+        - if User.find(post.input_user_id).on_off == 1
+          .on_off_dispry
+            出席中            
     .create_btn
       = link_to "「教えます」を投稿する",new_lesson_post_path(@lesson.id)

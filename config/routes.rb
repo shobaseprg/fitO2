@@ -29,7 +29,12 @@ Rails.application.routes.draw do
   end
 
 
-  resources :posts,only: [:show,:update] 
+  resources :posts,only: [:show,:update] do
+    member do
+      get "myshow"
+      patch "gooutput"
+    end
+  end
 
   resources :articles do
     collection do

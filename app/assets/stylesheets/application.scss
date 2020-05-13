@@ -37,10 +37,9 @@ color: black;}
   .main-content{
     position: absolute;
     top:0;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 70px;
     width: 100%;
-    height:calc(100% - 100px);
+    height:calc(100% - 50px);
     overflow:scroll;
   }
   .footer{
@@ -51,6 +50,7 @@ color: black;}
     border: solid;
     display: flex;
     justify-content: center;
+    background-color: lightgray;
     .footer-btn{
       button{
         margin-top: 7px;
@@ -60,15 +60,12 @@ color: black;}
         border-radius: 10px;
         text-align: center;
         font-size: 15px;
-        &:hover{
-          border:solid red;
-        }
+        margin-left:10px;
       }
     }
 
     .home{
-      margin-left: 40px;
-      margin-right: 40px;
+      margin-left: 10px;
       margin-top: 7px;
       height: 30px;
       width: 200px;
@@ -76,10 +73,8 @@ color: black;}
       border-radius: 10px;
       text-align: center;
       color: black;
+      background-color: white;
       position: relative;
-      &:hover{
-        border:solid red;
-      }
       a{
         position: absolute;
         top: 0;
@@ -90,4 +85,38 @@ color: black;}
       }
     }
   }
+  .hint-box{
+    height: 400px;
+    width: 600px;
+    border-radius: 10px;
+    background-color: pink;
+    position: fixed;
+    top:200px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 7px;
+
+    .cancel{
+      border: solid red;
+      color: red;
+      height: 30px;
+      width: 80px;
+      border-radius: 50px;
+      text-align: center;
+      line-height: 26px;
+      margin-left: 510px;
+      margin-top: 5px;
+    }
+    .hint-inner{
+      height: 100%;
+      width: 100%;
+      padding-top: 10px;
+      .hint_title{};
+      .hint-content{
+        margin-left: 15px;
+      }
+    }
+  }
+  
 }
