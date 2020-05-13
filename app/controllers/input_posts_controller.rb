@@ -22,7 +22,6 @@ class InputPostsController < ApplicationController
 private
   def input_post_params
     params.require(:post).permit(:title, :content, :lesson_id,:start_input_or_output).merge(input_or_output: 0,input_user_id: current_user.id)
-    質問から教えますへ移行の投稿を格納
   end
 
 end
