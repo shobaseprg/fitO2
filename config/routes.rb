@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       patch "swich"
+      get "history_input"
+      # △△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△
+      get "history_output"
+      # △△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△
     end
   end
 

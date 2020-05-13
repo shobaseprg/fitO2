@@ -1,0 +1,40 @@
+.history_category{
+  margin: 0 auto;
+  text-align: center;
+  border: solid;
+  border-radius: 10px;
+  background-color: pink;
+  .history_inner{
+    font-size: 13px;
+    border: solid;
+    border-radius: 10px; 
+    height: 300px;
+    width: 95%;
+    margin: 0 auto;
+    background-color: white;
+    .history_sub_category{
+      border: solid;
+      border-radius: 5px;
+      height: 25px;
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: yellow;
+    }
+    .history_onebox{
+      margin: 0 auto;
+      width: 95%;
+      border: solid;
+      border-radius:10px;
+      margin-bottom: 10px;
+      background-color: lightgray;
+      
+      .history_oneline{
+        height: 25px;
+        text-align: start;
+        overflow: scroll;
+    }
+  }
+   }
+}

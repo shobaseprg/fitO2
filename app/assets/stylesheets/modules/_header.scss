@@ -6,9 +6,11 @@
   position: relative;
   align-items: center;
   margin-bottom: 30px;
+  overflow: scroll;
   z-index: 100;
   .fitO_box{
-    margin-left: 30px;
+    position: absolute;
+    left: 30px;
     display: flex;
     position: relative;
     border-bottom: solid white;

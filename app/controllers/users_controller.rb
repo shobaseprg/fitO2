@@ -20,5 +20,14 @@ class UsersController < ApplicationController
     @my_output_posts = Post.where(input_or_output: 1).where(next_output_user_id:current_user.id)
     @my_clear_posts = Post.where(input_or_output: 2).where(next_output_user_id:current_user.id)
   end
-  
+
+# ===================================
+# input履歴表示用
+# ===================================
+  def history_input
+    @first_input_posts = Post.where(input_user_id: current_user.id).where.not(input_or_output:1)
+    # 質問から教えますに移行した投稿を格納
+    @second_input_posts = Post.where(next_input_user_id: current_user.id,input_or_output:2)
+    # 教えますからfitOに移行した投稿を格納
+  end
 end
