@@ -47,6 +47,8 @@ class UsersController < ApplicationController
 # ランキング履歴表示用
 # ===================================
   def ranking_all
-    @users = User.all.order(output_times: "DESC")
+    @q = User.search(params[:q])
+    users = @q.result
+    @users = users.order(output_times: "DESC") 
   end
 end

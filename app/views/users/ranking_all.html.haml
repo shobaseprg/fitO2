@@ -1,2 +1,17 @@
-- @users.each do |user|
-  = user.name
+.post_all
+  .post_all_inner
+    .ranking_range
+      ランキング範囲を絞る
+      = search_form_for @q, url: "/users/ranking_all" do |f| 
+        .input_period
+          = f.number_field :period_gteq 
+        .input_period
+          = f.number_field :period_lteq
+        = f.radio_button :style_eq, '', {:checked => true} 
+        = f.radio_button :style_eq, 1 
+        = f.radio_button :style_eq, 2 
+        = f.collection_select :team_id_eq, Team.all, :id, :name ,{prompt: "全て"}
+        = f.submit 
+
+      - @users.each_with_index do |user,index|
+        = "#{index + 1}位#{user.name}"
