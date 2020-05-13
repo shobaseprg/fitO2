@@ -147,8 +147,8 @@ lessons_base_9 =
 "HTML/CSSでマークアップしよう",
 "Rubyの基礎をドリルで磨こう",
 "ミニアプリを自力で作成しよう",
-"【補足カリキュラム】試験対策(HTML)",
-"【補足カリキュラム】試験対策(Ruby)"]
+"【補足】試験対策(HTML)",
+"【補足】試験対策(Ruby)"]
 
 i = 1
 lessons_base_9.each do |lesson|
@@ -216,7 +216,7 @@ lessons_development_5 =
 ["ChatSpace 概要",
 "ChatSpace 実装に入るための準備",
 "よくある指摘",
-"【補足カリキュラム】form_forとform_with"]
+"【補足】form_forとform_with"]
 
 i = 1
 lessons_development_5.each do |lesson|
@@ -241,7 +241,7 @@ lessons_development_7  =
 ["データベース設計の基礎",
 "テーブルの構成要素",
 "正規化を学習する",
-"【補足カリキュラム】様々なアプリケーションのデータベース設計をしてみよう",
+"【補足】様々なアプリケーションのデータベース設計をしてみよう",
 "ChatSpaceのデータベース設計"]
 
 i = 1
@@ -256,7 +256,7 @@ lessons_development_8 =
 "ChatSpace Hamlの導入",
 "Sassとhamlを使って、簡単なマークアップをしてみよう",
 "ChatSpace フロント実装",
-"【補足カリキュラム】フロント実装がわからなくなった時の対処方法"]
+"【補足】フロント実装がわからなくなった時の対処方法"]
 
 i = 1
 lessons_development_8.each do |lesson|
@@ -286,7 +286,7 @@ end
 lessons_development_10  = 
 ["Ruby on Railsの中でJavaScript/jQueryを使う",
 "Pictweetのコメント機能の非同期通信化",
-"【補足カリキュラム】簡単なアプリケーションでajaxを学ぼう",
+"【補足】簡単なアプリケーションでajaxを学ぼう",
 "Pictweetでインクリメンタルサーチを実装しよう",
 "ChatSpace メッセージ送信の非同期化",
 "ChatSpace インクリメンタルサーチ実装",
