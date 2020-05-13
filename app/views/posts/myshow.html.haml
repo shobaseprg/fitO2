@@ -24,113 +24,113 @@
             = f.number_field :outputer_id , placeholder: "教えてもらった人のidを入力してください"
             = f.submit "THANKS"
             
-      -# ==================================
-      -# 質問の場合の履歴
-      -# ==================================
-      .history
-        履歴：
-        .history-content
-          .block
-            = "[質問作成日] #{@post.created_at.to_s(:datetime_jp)}"
-          .block  
-            = "[作成者]#{@inputer.name}"
-          .block
-            ="[作成者]#{@inputer.slack}"
+    -#   -# ==================================
+    -#   -# 質問の場合の履歴
+    -#   -# ==================================
+    -#   .history
+    -#     履歴：
+    -#     .history-content
+    -#       .block
+    -#         = "[質問作成日] #{@post.created_at.to_s(:datetime_jp)}"
+    -#       .block  
+    -#         = "[作成者]#{@inputer.name}"
+    -#       .block
+    -#         ="[作成者]#{@inputer.slack}"
 
-      -# ==================================
-      -# 質問から教えますへ遷移した場合の場合の履歴
-      -# ==================================
-    - elsif @post.input_or_output == 1 && @post.start_input_or_output == 0
+    -#   -# ==================================
+    -#   -# 質問から教えますへ遷移した場合の場合の履歴
+    -#   -# ==================================
+    -# - elsif @post.input_or_output == 1 && @post.start_input_or_output == 0
 
-      .history
-        履歴：
-        .history-content
-          .block
-            = "[質問作成日] #{@post.created_at.to_s(:datetime_jp)}"
-          .block  
-            = "[作成者]#{@inputer.name}"
-          .block
-            ="[作成者slack]#{@inputer.slack}"
-          .space
-          .block  
-            = "[回答者]#{@outputer.name}"
-          .block
-            ="[回答者slack]#{@outputer.slack}"
+    -#   .history
+    -#     履歴：
+    -#     .history-content
+    -#       .block
+    -#         = "[質問作成日] #{@post.created_at.to_s(:datetime_jp)}"
+    -#       .block  
+    -#         = "[作成者]#{@inputer.name}"
+    -#       .block
+    -#         ="[作成者slack]#{@inputer.slack}"
+    -#       .space
+    -#       .block  
+    -#         = "[回答者]#{@outputer.name}"
+    -#       .block
+    -#         ="[回答者slack]#{@outputer.slack}"
 
-      -# ==================================
-      -# fito場合の場合の履歴
-      -# ================================== 
-    - elsif @post.input_or_output == 2 && @post.start_input_or_output == 0
+    -#   -# ==================================
+    -#   -# fito場合の場合の履歴
+    -#   -# ================================== 
+    -# - elsif @post.input_or_output == 2 && @post.start_input_or_output == 0
 
-      .history
-        履歴：
-        .history-content
-          .block
-            = "[質問作成日] #{@post.created_at.to_s(:datetime_jp)}"
-          .block  
-            = "[作成者]#{@inputer.name}"
-          .block
-            ="[作成者slack]#{@inputer.slack}"
+    -#   .history
+    -#     履歴：
+    -#     .history-content
+    -#       .block
+    -#         = "[質問作成日] #{@post.created_at.to_s(:datetime_jp)}"
+    -#       .block  
+    -#         = "[作成者]#{@inputer.name}"
+    -#       .block
+    -#         ="[作成者slack]#{@inputer.slack}"
 
-          .space
-          .block  
-            = "[回答者]#{@outputer.name}"
-          .block
-            ="[回答者slack]#{@outputer.slack}"
+    -#       .space
+    -#       .block  
+    -#         = "[回答者]#{@outputer.name}"
+    -#       .block
+    -#         ="[回答者slack]#{@outputer.slack}"
 
-          .space
-          .block  
-            = "[２次回答者]#{@next_outputer.name}"
-          .block
-            = "[回答者slack]#{@outputer.slack}"
+    -#       .space
+    -#       .block  
+    -#         = "[２次回答者]#{@next_outputer.name}"
+    -#       .block
+    -#         = "[回答者slack]#{@outputer.slack}"
 
-          .space
-          .block
-            = "[fitO] #{@post.updated_at.to_s(:datetime_jp)}"
-          .block  
-            = "[２次質問者]#{@next_inputer.name}"
-          .block
-            = "[2次質問者slack]#{@next_inputer.slack}"
+    -#       .space
+    -#       .block
+    -#         = "[fitO] #{@post.updated_at.to_s(:datetime_jp)}"
+    -#       .block  
+    -#         = "[２次質問者]#{@next_inputer.name}"
+    -#       .block
+    -#         = "[2次質問者slack]#{@next_inputer.slack}"
 
-      -# ==================================
-      -# 直接「教えます」に投稿したもの
-      -# ================================== 
-    - elsif @post.input_or_output == 1 && @post.start_input_or_output == 1
-      .history
-        履歴：
-        .history-content
-          .block
-            = "[「教えます」作成日] #{@post.created_at.to_s(:datetime_jp)}"
+    -#   -# ==================================
+    -#   -# 直接「教えます」に投稿したもの
+    -#   -# ================================== 
+    -# - elsif @post.input_or_output == 1 && @post.start_input_or_output == 1
+    -#   .history
+    -#     履歴：
+    -#     .history-content
+    -#       .block
+    -#         = "[「教えます」作成日] #{@post.created_at.to_s(:datetime_jp)}"
 
-          .space
-          .block  
-            = "[「教えます」作成者]#{@next_outputer.name}"
-          .block
-            = "[「教えます」作成者slack]#{@next_outputer.slack}"
-      -# ==================================
-      -# 直接「教えます」からクリアした投稿
-      -# ================================== 
-    - elsif @post.input_or_output == 2 && @post.start_input_or_output == 1
-      .history
-        履歴：
-        .history-content
-          .block
-            = "[「教えます」作成日] #{@post.created_at.to_s(:datetime_jp)}"
-          .block  
-            = "[「教えます」作成者]#{@next_outputer.name}"
-          .block
-            = "[「教えます」作成者slack]#{@next_outputer.slack}"
+    -#       .space
+    -#       .block  
+    -#         = "[「教えます」作成者]#{@next_outputer.name}"
+    -#       .block
+    -#         = "[「教えます」作成者slack]#{@next_outputer.slack}"
+    -#   -# ==================================
+    -#   -# 直接「教えます」からクリアした投稿
+    -#   -# ================================== 
+    -# - elsif @post.input_or_output == 2 && @post.start_input_or_output == 1
+    -#   .history
+    -#     履歴：
+    -#     .history-content
+    -#       .block
+    -#         = "[「教えます」作成日] #{@post.created_at.to_s(:datetime_jp)}"
+    -#       .block  
+    -#         = "[「教えます」作成者]#{@next_outputer.name}"
+    -#       .block
+    -#         = "[「教えます」作成者slack]#{@next_outputer.slack}"
 
-          .space
-          .block  
-            = "[回答者]#{@next_outputer.name}"
-          .block
-            = "[回答者slack]#{@next_outputer.slack}"
+    -#       .space
+    -#       .block  
+    -#         = "[回答者]#{@next_outputer.name}"
+    -#       .block
+    -#         = "[回答者slack]#{@next_outputer.slack}"
 
-          .space
-          .block
-            = "[fitO] #{@post.updated_at.to_s(:datetime_jp)}"
-          .block  
-            = "[質問者]#{@next_inputer.name}"
-          .block
-            = "[質問者slack]#{@next_inputer.slack}"
+    -#       .space
+    -#       .block
+    -#         = "[fitO] #{@post.updated_at.to_s(:datetime_jp)}"
+    -#       .block  
+    -#         = "[質問者]#{@next_inputer.name}"
+    -#       .block
+    -#         = "[質問者slack]#{@next_inputer.slack}"

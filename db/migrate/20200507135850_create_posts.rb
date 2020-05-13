@@ -10,6 +10,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.integer :next_output_user_id
       t.integer :input_or_output
       t.integer :start_input_or_output
+      t.string :first_update_date
       t.timestamps
     end
   end

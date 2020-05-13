@@ -10,7 +10,6 @@ class InputPostsController < ApplicationController
   # ===================================
   def create
     post = Post.new(input_post_params)
-    binding.pry
     if post.save
       redirect_to root_path
       flash[:notice] = "「質問」を投稿しました"
