@@ -23,7 +23,7 @@
             .history_oneline
               = "教えてもらった日時：#{post.first_update_date}".gsub(/\+0900/,"" )
               -# inputからouput移行した日時
-
+      .history_inner
         .history_sub_category
           掲示板から
         - @second_input_posts.each do |post|
@@ -40,6 +40,6 @@
               = "lesson:#{post.lesson.lesson_no}"
               = post.title
             .history_oneline
-              = "教えてもらった人：[name]#{User.find(post.output_user_id).name}[slack]#{User.find(post.output_user_id).slack}"
+              = "教えてもらった人：[name]#{User.find(post.next_output_user_id).name}[slack]#{User.find(post.next_output_user_id).slack}"
             .history_oneline
               = "教えてもらった日時：#{post.updated_at}".gsub(/\+0900/,"" )
