@@ -7,7 +7,7 @@
       .form__title
         = f.text_field :title, placeholder: "タイトル（教えたい内容）",class: "title_field"
       .form__content
-        = f.text_area :content, placeholder: "マークダウン記法を用いてコードブロックを挿入することができます。画像を投稿する場合はgyazonのURLを貼り付けてください。",class: "content_field"
+        = f.text_area :content, placeholder: "マークダウン記法を用いてコードブロックを挿入することができます。画像を投稿する場合はgyazoのURLを貼り付けてください。",class: "content_field"
         = f.hidden_field :lesson_id, value: params[:lesson_id]
         = f.hidden_field :start_input_or_output, value: 1
       .form__btns

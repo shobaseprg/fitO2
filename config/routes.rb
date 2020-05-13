@@ -13,13 +13,12 @@ Rails.application.routes.draw do
   
   root to: 'entrances#index'
 
-  resources :users do
+  resources :users,only:[:show] do
     collection do
       patch "swich"
       get "history_input"
-      # △△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△
       get "history_output"
-      # △△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△
+      get "ranking_all"
     end
   end
 

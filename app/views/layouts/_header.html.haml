@@ -16,7 +16,7 @@
       .header_btn
         = link_to "マイページ",user_path(current_user.id), method: :get
       .header_btn
-        ランキング
+        = link_to "ランキング",ranking_all_users_path, method: :get
       .header_btn
         = link_to "エディット",edit_user_registration_path
       .header_btn

@@ -11,6 +11,9 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def index
+  end
+
 
 # ===================================
 # マイページ
@@ -39,5 +42,11 @@ class UsersController < ApplicationController
     # 掲示板から教えた場合に移行した投稿を格納
     @second_output_posts_from_mypost = Post.where(next_output_user_id: current_user.id,input_or_output:2)
     # 掲示板から教えた投稿を格納
+  end
+# ===================================
+# ランキング履歴表示用
+# ===================================
+  def ranking_all
+    @users = User.all.order(output_times: "DESC")
   end
 end
