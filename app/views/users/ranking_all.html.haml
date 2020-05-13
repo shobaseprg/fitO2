@@ -1,17 +1,58 @@
 .post_all
   .post_all_inner
     .ranking_range
-      ランキング範囲を絞る
-      = search_form_for @q, url: "/users/ranking_all" do |f| 
-        .input_period
-          = f.number_field :period_gteq 
-        .input_period
-          = f.number_field :period_lteq
-        = f.radio_button :style_eq, '', {:checked => true} 
-        = f.radio_button :style_eq, 1 
-        = f.radio_button :style_eq, 2 
-        = f.collection_select :team_id_eq, Team.all, :id, :name ,{prompt: "全て"}
-        = f.submit 
-
-      - @users.each_with_index do |user,index|
-        = "#{index + 1}位#{user.name}"
+      .search_box
+        .search_title
+          ランキング範囲を絞る
+        = search_form_for @q, url: "/users/ranking_all" do |f| 
+          .search_form
+            .input_period
+              = f.number_field :period_gteq 
+            %p
+              期 〜
+            .input_period
+              = f.number_field :period_lteq
+            %p
+              期
+            .input_style
+              スタイル
+              = f.select :style, [["短期", 1],["夜間", 2]],:include_blank => '指定なし'
+            .input_style
+              チーム
+              = f.collection_select :team_id_eq, Team.all, :id, :name ,:include_blank => '指定なし'
+            .input_style
+              = f.submit "絞る"
+      .ranking_list
+        %table
+          %th
+            %td
+              名前
+            %td
+              アウトプット数
+            %td
+              期
+            %td
+              スタイル
+            %td
+              チーム
+            %td
+              スラック
+          - @users.each_with_index do |user,index|
+            %tr
+              %td.td_ranking
+                = index + 1
+              %td.td_name
+                = user.name
+              %td
+                = user.output_times
+              %td.td_period
+                = user.period
+              %td
+                - if user.style == 1
+                  短期
+                - else
+                  = 夜間
+              %td
+                = user.team.name
+              %td.td_name
+                = user.slack

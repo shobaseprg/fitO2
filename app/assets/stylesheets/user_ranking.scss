@@ -1,5 +1,76 @@
 .ranking_range{
   height: 100%;
   width: 100%;
-  border: solid;
+  .search_box{
+    width: 95%;
+    margin: 0 auto;
+    margin-top:10px;
+    
+    .search_title{
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .search_form{
+      display: flex;
+      padding-bottom: 10px;
+      p{
+        font-size: 16px;
+      }
+    .input_period{
+      width: 50px;
+      height: 30px;
+      margin-left:10px;
+      line-height: 30px;
+      font-size: 15px;
+      border: solid 1px;
+      border-radius: 5px;
+      input {
+        text-align: center;
+        line-height: 30px;
+        height:30px;
+    }
+   }
+    .input_style{
+      margin-left: 40px;
+      select{
+        height: 30px;
+      }
+      input{
+        width: 70px;
+        background-color: red;
+        height: 30px;
+        color: white;
+        border-radius: 5px;
+      }
+    }
+    
+  }
+  }
+  .ranking_list{
+    margin-top: 30px;
+    height: 100%;
+    width: 100%;
+    table {
+      border-collapse: collapse;
+      font-size: 10px;
+      text-align: center;
+      overflow: scroll;
+    }
+    td {
+      border: solid 1px;
+      padding: 0.5em;
+      width: 60px;
+    }
+    .td_ranking{
+      width: 40px;
+    }
+    .td_name{
+      width: 230px;
+    }
+    .td_period{
+      width: 40px;
+
+    }
+  }
+
 }
