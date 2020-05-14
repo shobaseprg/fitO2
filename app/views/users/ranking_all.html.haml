@@ -7,11 +7,11 @@
         = search_form_for @q, url: "/users/ranking_all" do |f| 
           .search_form
             .input_period
-              = f.number_field :period_gteq 
+              = f.number_field :period_gteq ,min:"50",max:"100"
             %p
               期 〜
             .input_period
-              = f.number_field :period_lteq
+              = f.number_field :period_lteq,min:"50",max:"100"
             %p
               期
             .input_style
