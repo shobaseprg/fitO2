@@ -19,7 +19,10 @@
               = "lesson:#{post.lesson.lesson_no}"
               = post.title
             .history_oneline
-              = "教えてもらった人：[name]#{User.find(post.output_user_id).name}[slack]#{User.find(post.output_user_id).slack}"
+              - if post.output_user_id? && User.exists?(id: post.output_user_id)
+                = "教えてもらった人：[name]#{User.find(post.output_user_id).name}[slack]#{User.find(post.output_user_id).slack}"
+              - else
+                教えてもらったユーザーは退会しています。
             .history_oneline
               = "教えてもらった日時：#{post.first_update_date}".gsub(/\+0900/,"" )
               -# inputからouput移行した日時
@@ -40,7 +43,10 @@
               = "lesson:#{post.lesson.lesson_no}"
               = post.title
             .history_oneline
-              = "教えてもらった人：[name]#{User.find(post.next_output_user_id).name}[slack]#{User.find(post.next_output_user_id).slack}"
+              - if post.next_output_user_id? && User.exists?(id: post.next_output_user_id)
+                = "教えてもらった人：[name]#{User.find(post.next_output_user_id).name}[slack]#{User.find(post.next_output_user_id).slack}"
+              - else
+                教えてもらったユーザーは退会しています
             .history_oneline
               = "教えてもらった日時：#{post.updated_at}".gsub(/\+0900/,"" )
   .hint-box.none

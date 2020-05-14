@@ -7,5 +7,6 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name , :slack, :period, :style, :team_id])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name , :slack, :period, :style, :team_id])
   end
 end

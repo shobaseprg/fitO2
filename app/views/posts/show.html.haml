@@ -18,11 +18,16 @@
     -# ==================================
     -# 教えますの場合、名前入力箇所
     -# ==================================
+
     - if @post.next_output_user_id == current_user.id 
     - else
       - if @post.input_or_output == 1 
-        .thanks_for_outputer
-          = form_with model: @post, url: {controller: 'posts', action: 'update'},local: true do |f|
-            .form__title
-              = f.number_field :outputer_id , placeholder: "教えてもらった人のidを入力してください"
-              = f.submit "THANKS"
+        - if @post.next_output_user_id? && User.exists?(id: @post.next_output_user_id)
+          .thanks_for_outputer
+            = form_with model: @post, url: {controller: 'posts', action: 'update'},local: true do |f|
+              .form__title
+                = f.number_field :outputer_id , placeholder: "教えてもらった人のidを入力してください"
+                = f.submit "THANKS"
+        - else
+          .thanks_for_outputer
+            ユーザーが退会しました。
