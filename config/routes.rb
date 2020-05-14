@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     resources :input_posts, only: [:new,:create]
   end
 
+  resources :input_posts, only: [:edit,:update,:destroy]
 
   resources :posts,only: [:show,:update] do
     member do
