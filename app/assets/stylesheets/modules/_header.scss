@@ -40,7 +40,7 @@
 }
 
 .swith{
-  border: solid black;
+  border: solid 1px black;
   border-radius: 60px;
   height: 40px;
   width: 60px;
@@ -74,10 +74,11 @@
       text-align: center;
       margin-right: 20px;
       height: 30px;
+      line-height: 30px;
       width: 120px;
       color: white;
       background-color:lightgray;
-      border: solid gray;
+      border: solid 1px gray;
       border-radius: 10px;
       position: relative;
       a{

@@ -23,8 +23,8 @@
           .form__title
             = f.number_field :outputer_id , placeholder: "教えてもらった人のidを入力してください"
             = f.submit "THANKS"
-      .edit_destroy_btns
-        .edit_btn
-          = link_to "編集する", edit_input_post_path(@post.id),method: :get
-        .destroy_btn
-          = link_to "削除する", input_post_path(@post.id), method: :delete
+        .edit_destroy_btns
+          .edit_btn
+            = link_to "編集", edit_input_post_path(@post.id),method: :get
+          .destroy_btn
+            = link_to "削除", input_post_path(@post.id), method: :delete

@@ -8,7 +8,7 @@
     margin: 0 auto;
     width: 100%;
     height: 100%;
-    border: solid;
+    border: solid 1px;
     border-radius: 5px;
     position: relative;
     .history_btns{display: flex;
@@ -18,8 +18,9 @@
         background-color: yellow;
         margin-right: 30px;
         height: 30px;
+        line-height: 30px;
         width: 100px;
-        border:solid;
+        border:solid 1px;
         border-radius: 10px;
         text-align: center;
       }
@@ -28,8 +29,9 @@
       margin: 0 auto;
       margin-top: 10px;
       height: 30px;
+      line-height: 30px;
       width: 700px;
-      border: solid;
+      border: solid 1px;
       border-radius: 5px;
       display: flex;
       &__topic-id{
@@ -59,7 +61,7 @@
       margin: 0 auto;
       margin-top: 10px;
       height: 50px;
-      border: solid;
+      border: solid 1px;
       border-radius: 5px;
       display: flex;
       p{
@@ -83,7 +85,7 @@
    &__tab{
     height: 50px;
     width: 223px;
-    border: solid;
+    border: solid 1px;
     border-radius: 5px;
     display: flex;
     margin-left: 7px;
