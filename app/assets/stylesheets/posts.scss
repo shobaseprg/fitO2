@@ -83,12 +83,38 @@
       text-align: center;
       background-color: skyblue;
     }
-    .slack_display{
+    .slack_box{
+      display: flex;
+      width: 600px;
       height: 40px;
       width: 100%;
       border: solid 1px;
       border-radius: 10px;
       line-height: 40px;
+      align-items: center;
+      position: relative;
+      .slack_display{
+      }
+      #copyalert{
+        position: absolute;
+        right: 150px;
+        border: solid 1px green;
+        color:green ;
+        border-radius: 5px;
+        height: 30px;      
+        width: 20%;
+        line-height:30px ;
+      }
+      #copy_btn{
+        position: absolute;
+        right: 5px;
+        border: solid 1px red;
+        color: red;
+        border-radius: 5px;
+        height: 30px;      
+        width: 20%;
+        line-height:30px ;
+      }
     }
   }
 }

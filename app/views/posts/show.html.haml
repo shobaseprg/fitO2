@@ -12,8 +12,16 @@
         = toc(@post.content) 
         = markdown(@post.content)
     .form__btns
-      .slack_display
-        = "Slack      :     #{@slack}"
+      .slack_box
+        .slack_display
+          = "Slack　:　"
+        #slack_display_copy
+          %p
+            = "#{@slack}"
+        #copy_btn
+          slackをコピーする
+        #copyalert.none
+          コピーしました。
 
     -# ==================================
     -# 教えますの場合、名前入力箇所
