@@ -49,13 +49,13 @@ class PostsController < ApplicationController
     @post = Post.find_by(id:params[:id])
       if  @post.input_or_output == 0
         if @post.input_user_id? && User.exists?(id: @post.input_user_id)
-            @slack = User.find_by(id:@post.input_user_id).slack
+            @slack = @post.input_user.slack
         else
           @slack = "ユーザーは退会しています"
         end 
       else  
         if @post.next_output_user_id? && User.exists?(id: @post.next_output_user_id)
-            @slack = User.find_by(id:@post.next_output_user_id).slack
+            @slack = @post.next_output_user.slack
         else
             @slack = "ユーザーは退会しています"
         end
@@ -88,7 +88,9 @@ def gooutput
       # この質問をアウトプットへ移行、output_user_idに教えてもらった人のid,next_output_user_idに自分のidを格納
       @post.update(first_update_date: @post.updated_at)
       # △△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△
-      user = User.find_by(id:params[:post][:outputer_id])
+      # user = User.find_by(id:params[:post][:outputer_id])
+      binding.pry
+      user = @post.output_user
       user.output_times += 1
       user.save
       # 教えてくれた人のアウトプット回数を計上

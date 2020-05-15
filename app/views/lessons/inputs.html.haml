@@ -19,7 +19,7 @@
           .your_display
             これはあなたの投稿です。
         - if post.input_user_id? && User.exists?(id: post.input_user_id)
-          - if User.find_by(id:post.input_user_id).on_off == 1
+          - if post.make_input_user.on_off == 1
             .on_off_dispry
               出席中 
         - else

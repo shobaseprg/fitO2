@@ -20,7 +20,7 @@
               = post.title
             .history_oneline
               - if post.output_user_id? && User.exists?(id: post.output_user_id)
-                = "教えてもらった人：[name]#{User.find(post.output_user_id).name}[slack]#{User.find(post.output_user_id).slack}"
+                = "教えてもらった人：[name]#{post.output_user.name}[slack]#{post.output_user.slack}"
               - else
                 教えてもらったユーザーは退会しています。
             .history_oneline
@@ -44,7 +44,7 @@
               = post.title
             .history_oneline
               - if post.next_output_user_id? && User.exists?(id: post.next_output_user_id)
-                = "教えてもらった人：[name]#{User.find(post.next_output_user_id).name}[slack]#{User.find(post.next_output_user_id).slack}"
+                = "教えてもらった人：[name]#{post.next_output_user.name}[slack]#{post.next_output_user.slack}"
               - else
                 教えてもらったユーザーは退会しています
             .history_oneline
