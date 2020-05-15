@@ -20,7 +20,7 @@ has_many :posts,foreign_key: :next_output_user_id ,primary_key: :id,dependent: :
 #  バリデーション
 #  ===================================
 validates :name, presence: true, uniqueness: true,length: { maximum: 20 }
-validates :slack, presence: true, length: { maximum: 50 }
+validates :slack, presence: true, uniqueness: true,length: { maximum: 50 }
 validates :period, presence: true, inclusion: {in: 50..200 }       
 validates :style, presence: true, inclusion: {in: 1..2 } 
 validates :team_id, presence: true
