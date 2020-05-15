@@ -96,11 +96,23 @@ def gooutput
       # 教えてくれた人のアウトプット回数を計上
       flash[:notice] = "この投稿は「教えます」一覧に移行しました"
       redirect_to root_path
-
     end
   end
 end
 
+def posts_clear
+  i = 0
+  post_all = Post.all
+    post_all.each do |post|
+      if User.exists?(id: post.input_user_id) || User.exists?(id: post.output_user_id) || User.exists?(id: post.next_input_user_id) || User.exists?(id: post.next_output_user_id)
+      else
+        post.destroy
+        i += 1
+      end
+    end
+  flash[:alert] = "管理者によって、紐づくユーザーのない投稿は削除されました　削除された件数は#{i}件です"
+  redirect_to root_path
+end
 
 private
 

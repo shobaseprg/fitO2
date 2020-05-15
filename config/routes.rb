@@ -39,6 +39,9 @@ Rails.application.routes.draw do
       get "myshow"
       patch "gooutput"
     end
+    collection do
+      delete "posts_clear"
+    end
   end
 
   resources :articles do
