@@ -409,6 +409,8 @@ User.create(email:"4@gmail.com",password:"1111111a",name:"4siro",slack:"4siro_sl
 User.create(email:"5@gmail.com",password:"1111111a",name:"5goro",slack:"5goro_slack",period: 60,style:"1",team_id:"8",output_times:0 ,on_off:0)
 User.create(email:"6@gmail.com",password:"1111111a",name:"6rokuro",slack:"6rokuro_slack",period: 75,style:"2",team_id:"9",output_times:0 ,on_off:0)
 User.create(email:"7@gmail.com",password:"1111111a",name:"7sitirou",slack:"7sitirou_slack",period: 80,style:"2",team_id:"3",output_times:0 ,on_off:0)
+User.create(email:"admin@gmail.com",password:"1111111a",name:"管理者",slack:"管理者",period: 80,style:"2",team_id:"3",output_times:0 ,on_off:0,admin: 1)
+
 
 
 
