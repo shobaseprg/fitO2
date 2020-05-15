@@ -4,9 +4,13 @@
 .post_form#preview
   .form
     .form__title
-      .title_field
-        = @post.title
-        = "[id:#{@post.id}]"
+      #title_field
+        #title_id
+          = "#{@post.title}　[id:#{@post.id}]"
+        #copy_title_id_btn
+          タイトルと掲示板idをコピーする
+        #copyalert_title_id.none
+          コピーしました。      
     .form__content
       .content_field
         = toc(@post.content) 

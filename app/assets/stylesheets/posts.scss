@@ -17,13 +17,37 @@
       width: 100%;
       height: 40px;
 
-
-      .title_field{
+      #title_field{
         width: 100%;
         border: solid 1px;
         height: 40px;
         line-height: 40px;
         border-radius: 7px;
+        display: flex;
+        position: relative;
+        align-items: center;
+        #copy_title_id_btn{
+          position: absolute;
+          right: 5px;
+          border: solid 1px red;
+          color: red;
+          border-radius: 5px;
+          height: 30px;      
+          width: 35%;
+          line-height:30px ;
+        }
+        #copyalert_title_id{
+          position: absolute;
+          right: 255px;
+          border: solid 1px green;
+          color:green ;
+          border-radius: 5px;
+          height: 30px;      
+          width: 20%;
+          line-height:30px ;
+        }
+
+
       }
       #preview_title{
         color: red;
@@ -191,4 +215,3 @@
 .hidden{
   display: none;
 }
-
