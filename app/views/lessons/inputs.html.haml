@@ -18,7 +18,7 @@
         - if post.input_user_id == current_user.id  # 自分の質問投稿の場合
           .your_display
             これはあなたの投稿です。
-        - if post.input_user_id? && User.exists?(id: post.input_user_id)
+        - unless post.input_user_id == nil
           - if post.input_user.on_off == 1
             .on_off_dispry
               出席中 
