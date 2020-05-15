@@ -24,5 +24,5 @@ validates :period, presence: true, inclusion: {in: 50..200 }
 validates :style, presence: true, inclusion: {in: 1..2 } 
 validates :team_id, presence: true
 validates :email, presence: true, uniqueness: true
-validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX }
+validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX }, on: :create
 end
