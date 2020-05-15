@@ -49,6 +49,16 @@
 
 
       }
+      .title_field{
+      width: 100%;
+      border: solid 1px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 7px;
+      display: flex;
+      position: relative;
+      align-items: center;
+      }
       #preview_title{
         color: red;
         line-height: 40px;
