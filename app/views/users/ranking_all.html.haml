@@ -16,10 +16,10 @@
               期
             .input_style
               スタイル
-              = f.select :style, [["短期", 1],["夜間", 2]],:include_blank => '指定なし'
+              = f.select :style_eq, [["短期", 1],["夜間", 2]],:include_blank => '指定なし'
             .input_style
               チーム
-              = f.select :team_id, [["A","A" ],["B", "B"],["C", "C"],["D", "D"],["E", "E"],["F","F"],["G", "G"],["H","H"],["I","I"],["J", "J"],["K","K"],["L","L"],["M","M"],["N","N"],["O", "O"],["P","P"],["Q","Q"],["R","R"],["S", "S"],["T","U"],["U","U"],["V", "V"],["W","W"],["X","X"],["Y", "Y"],["Z","Z"]],:include_blank => '指定なし'
+              = f.select :team_id_eq, [["A","A" ],["B", "B"],["C", "C"],["D", "D"],["E", "E"],["F","F"],["G", "G"],["H","H"],["I","I"],["J", "J"],["K","K"],["L","L"],["M","M"],["N","N"],["O", "O"],["P","P"],["Q","Q"],["R","R"],["S", "S"],["T","U"],["U","U"],["V", "V"],["W","W"],["X","X"],["Y", "Y"],["Z","Z"]],:include_blank => '指定なし'
             .input_style
               = f.submit "絞る"
       .scroll_mine
