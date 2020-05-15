@@ -1,29 +1,6 @@
 - if user_signed_in?
   .link_to_posts
     = link_to "掲示板を見る",lessons_path
-  .new_posts
-    新着質問一覧
-  .post_all
-    .post_all_inner
-      - @new_posts.each do |post|
-        .one_post
-          = link_to "",post_path(post.id)
-          .one_post__title
-            - case post.lesson.base_or_development
-              - when 0 then
-                = "基礎"
-              - when 1 then
-                = "応用"
-              - when 2 then
-                = "最終"
-            = "lesson:#{post.lesson.lesson_no}"
-            = post.lesson.title
-            = "[id:#{post.id}]"
-          .one_post__title
-            = post.title
-          .one_post__content
-            = toc(post.content) 
-            = markdown(post.content)
 
   .hint-box.none
     .cancel
@@ -47,10 +24,9 @@
         .hint-content
           %p
             ○[掲示板を見る]・・・投稿された掲示板を確認できます。
-          %p
-            ○[新着質問一覧]・・・新着の質問５件が表示されます。クリックで詳細が確認できます。
-            
-            
+
+              
+              
 
             
 
