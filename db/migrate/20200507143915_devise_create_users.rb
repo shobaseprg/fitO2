@@ -11,7 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :slack,              null: false, unique: true
       t.integer :period,            null: false
       t.integer :style,             null: false
-      t.integer :team_id,                null: false
+      t.string :team_id,                null: false
       t.integer :output_times, default: "0"    
       t.integer :on_off,default:"0"
       t.boolean :admin ,default: false
