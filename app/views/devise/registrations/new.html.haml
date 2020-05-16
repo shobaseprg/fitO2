@@ -1,48 +1,66 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  .field
-    = f.label "名前"
-    %br/
-    = f.text_field :name, autofocus: true, autocomplete: "name", maxlength: "20"
-    = resource.errors.full_messages_for(:name)[0]
-  .field
-    = f.label "スラック"
-    %br/
-    = f.text_field :slack, autofocus: true, autocomplete: "slack",maxlength: "20"
-    = resource.errors.full_messages_for(:slack)[0]
-  .field
-    = f.label "期"
-    %br/
-    = f.number_field :period, autofocus: true, autocomplete: "period",maxlength: "3"
-    - if resource.errors.full_messages_for(:period)[0]
-      あなたの所属する期を半角数字で入力してください。
-  .field
-    .style_checkbox
-      = f.label "学習スタイル"
-      = f.select :style, [["選択してください", 0],["短期", 1],["夜間", 2]]
+.devise_form
+  %h2 サインアップ
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    .field
+      .field__key
+        = f.label "名前"
+      .field__value
+        = f.text_field :name, autofocus: true, autocomplete: "name", maxlength: "20",class:"input_field",placeholder:"たろう"
+    .error_show    
+      = resource.errors.full_messages_for(:name)[0]
+    .field
+      .field__key
+        = f.label "スラック"
+      .field__value
+        = f.text_field :slack, autofocus: true, autocomplete: "slack",maxlength: "20",class:"input_field",placeholder:"taro_yamada"
+    .error_show
+      = resource.errors.full_messages_for(:slack)[0]
+    .field
+      .field__key
+        = f.label "期"
+      .field__value
+        = f.number_field :period, autofocus: true, autocomplete: "period",min:"50",max: "100",class:"input_field",placeholder:"60"
+    .error_show
+      - if resource.errors.full_messages_for(:period)[0]
+        あなたの所属する期を半角数字で入力してください。
+    .field
+      .field__key
+        = f.label "学習スタイル"
+      .field__value
+        = f.select :style, [["選択してください", 0],["短期", 1],["夜間", 2]]
+    .error_show
       - if resource.errors.full_messages_for(:style)[0]
         学習スタイルを選択してください
-  .field
-    .team_checkbox
-    = f.label "チーム名"
-    = f.collection_select :team_id, Team.all, :id, :name ,{prompt: "選択してください"}
-    - if resource.errors.full_messages_for(:team_id)[0]
-      チーム名を選択してください。
-  .field
-    = f.label "Eメール"
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-    = resource.errors.full_messages_for(:nickname)[0]
-  .field
-    = f.label "パスワード（半角英数を両方使い８文字以上）"
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    = resource.errors.full_messages_for(:password)[0]
-  .field
-    = f.label "パスワード（確認用）"
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-    = resource.errors.full_messages_for(:password_confirmation)[0]
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+    .field
+      .field__key
+        = f.label "チーム名"
+      .field__value
+        = f.select :team_id, [["選択してください", ""],["A","A" ],["B", "B"],["C", "C"],["D", "D"],["E", "E"],["F","F"],["G", "G"],["H","H"],["I","I"],["J", "J"],["K","K"],["L","L"],["M","M"],["N","N"],["O", "O"],["P","P"],["Q","Q"],["R","R"],["S", "S"],["T","U"],["U","U"],["V", "V"],["W","W"],["X","X"],["Y", "Y"],["Z","Z"]]
+    .error_show
+      - if resource.errors.full_messages_for(:team_id)[0]
+        チーム名を選択してください。
+    .field
+      .field__key
+        = f.label "Eメール"
+      .field__value
+        = f.email_field :email, autofocus: true, autocomplete: "email",class:"input_field",placeholder:"exampl@gmail.com"
+    .error_show
+      = resource.errors.full_messages_for(:email)[0]
+    .field
+      .field__key
+        = f.label "パスワード"
+      .field__value
+        = f.password_field :password, autocomplete: "new-password",class:"input_field"
+    .error_show
+      = resource.errors.full_messages_for(:password)[0]
+    %p 
+      ※英数字含む８文字以上
+    .field
+      .field__key
+        = f.label "パスワード"
+      .field__value
+        = f.password_field :password_confirmation, autocomplete: "new-password",class:"input_field",placeholder:"（確認用）"
+    .error_show
+      = resource.errors.full_messages_for(:password_confirmation)[0]
+    .actions
+      = f.submit "Sign up"

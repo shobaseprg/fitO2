@@ -20,11 +20,44 @@
         - if post.next_output_user_id == current_user.id  # 自分の教えます投稿の場合
           .your_display
             これはあなたの投稿です。
-        - if User.find(post.next_output_user_id).on_off == 1
+        - if post.next_output_user_id? && User.exists?(id: post.next_output_user_id)
+          - if post.next_output_user.on_off == 1
+            .on_off_dispry
+              出席中
+        - else
           .on_off_dispry
-            出席中
+            退会済
+
+          
 
     .create_btn
       = link_to "「質問」を投稿する",new_lesson_input_post_path(@lesson.id)
 
-    
+  .hint-box.none
+    .cancel
+      close
+    .hint-inner
+      .hint-title
+        ●ヘッダー
+      .hint-content
+        %p
+          ○[on]・・・出席したらoffボタンをクリックしてください。(あなたの投稿に「出席中」が明示されます。)
+        %p
+          ○[マイページ]・・・投稿中の掲示板や、過去の履歴が確認できます。
+        %p
+          ○[ランキング]・・・アウトプット回数のランキングを見ることができます。
+        %p
+          ○[エディット]・・・ユーザー情報の変更ができます。
+        %p
+          ○[ログアウト]・・・ログアウトします。
+      .hint-title
+        ●コンテンツ
+        .hint-content
+          %p
+            ○[詳細を確認する]・・・一覧から、クリックするとその投稿の詳細が確認できます。
+          %p
+            ○[掲示板から質問する]・・・自分が質問内容と同様の投稿があれば、スラックで投稿者に連絡をとり、質問してください。教えてももらった後、詳細画面から教えてもらった人のidを入力してください。（この作業をすることで、教えてもらった人のアウトプット回数が計上されます。）
+          %p
+            ○[「質問」を投稿する]・・・自分が知りたい内容と同様の投稿がなければ、右下の「質問を投稿する」ボタンをクリックしてください。
+          %p
+            ○[表示について]・・・ 自分の投稿及び投稿者が出席中の場合は、その旨が一覧に表示されます。  

@@ -1,5 +1,67 @@
-.style_checkbox{
-  #user_style{
-  height: 300px;
+.devise_form{
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 20px;
+  h2{
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .field{
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 20px;
+    &__key{
+      width: 120px;
+      line-height: 50px;
+      text-align: end;
+      margin-right: 10px;
+    }
+    &__value{
+      width: 350px;
+      .input_field{
+        width: 100%;
+        border: solid lightblue 1px ;
+        border-radius:5px;
+        appearance: none;
+        outline: none;
+      }
+      #user_style{
+        width: 100%;
+        height: 45px;
+        appearance: none;
+        outline: none;
+        background-color: white;
+        border: solid lightblue 1px ;
+      }
+      #user_team_id{
+        width: 100%;
+        height: 45px;
+        appearance: none;
+        outline: none;
+        background-color: white;
+        border: solid lightblue 1px ;
+      }
+    }  
+  } 
+  p{
+    margin-left: 180px;
+    font-size: 11px;
+    }
+  .error_show{
+    margin-left: 180px;
+    color: red;
+  }
+  .actions{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+   input{
+     background-color: red;
+     border: solid 1px;
+     border-radius: 10px;
+     width: 200px;
+   }
   }
 }

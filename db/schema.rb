@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 2020_05_07_143915) do
     t.string "slack", null: false
     t.integer "period", null: false
     t.integer "style", null: false
-    t.integer "team_id", null: false
+    t.string "team_id", null: false
     t.integer "output_times", default: 0
     t.integer "on_off", default: 0
-    t.integer "rank"
+    t.boolean "admin", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

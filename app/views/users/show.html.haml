@@ -25,8 +25,11 @@
         教えます一覧
       .mypage__inner__tabs__tab{data: {target: "3"}}
         fitO
-    = link_to "input履歴" ,history_input_users_path
-    = link_to "Output履歴",history_output_users_path
+    .history_btns
+      .history_btn
+        = link_to "input履歴" ,history_input_users_path
+      .history_btn
+        = link_to "Output履歴",history_output_users_path
 .post_all
   .post_all_inner.none{data: {target: "1"}}
     - @my_input_posts.each do |post|
@@ -91,4 +94,35 @@
           = toc(post.content) 
           = markdown(post.content)
 
-
+  .hint-box.none
+    .cancel
+      close
+    .hint-inner
+      .hint-title
+        ●ヘッダー
+      .hint-content
+        %p
+          ○[on]・・・出席したらoffボタンをクリックしてください。(あなたの投稿に「出席中」が明示されます。)
+        %p
+          ○[マイページ]・・・投稿中の掲示板や、過去の履歴が確認できます。
+        %p
+          ○[ランキング]・・・アウトプット回数のランキングを見ることができます。
+        %p
+          ○[エディット]・・・ユーザー情報の変更ができます。
+        %p
+          ○[ログアウト]・・・ログアウトします。
+      .hint-title
+        ●コンテンツ
+        .hint-content
+          %p
+            ○[input履歴]・・・インプットした履歴が確認できます。
+          %p
+            ○[output履歴]・・・アウトプットした履歴が確認できます。
+          %p
+            ○[output times]・・・アウトプットした回数が表示されます。
+          %p
+            ○[質問一覧]・・・ 現在投稿中の質問が確認できます。また、教えてもらった場合は、詳細表示から、教えてもらった人のidを入力してください。（そうすることで、教えてもらった人のアウトプット回数が計上されます。）
+          %p
+            ○[教えます一覧]・・・現在投稿中の「教えます」一覧が確認できます。
+          %p
+            ○[fitO]・・・アウトプット済の投稿が確認できます。

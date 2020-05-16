@@ -22,17 +22,22 @@ class PostsController < ApplicationController
 # アップデート(教えますから、クリアへ)
 # ===================================
   def update
-    check_outputer_id = Post.find(params[:id]).next_output_user_id    # 投稿者のidを変数に格納
-    if params[:post][:outputer_id].to_i == check_outputer_id    # 投稿者のidと入力のidが正しいかチェック
-      Post.find(params[:id]).update(input_or_output: 2,next_input_user_id: current_user.id)   # 投稿をクリアに更新,2次質問者に自分を格納
-      output_user = User.find(check_outputer_id)  # 投稿者を変数に格納
-      output_user.output_times += 1 # 投稿者のアウトプット回数を計上する
-      output_user.save
-      flash[:notice] = "この投稿はクリアされました"
-      redirect_to root_path
+    if Post.find(params[:id]).next_output_user_id? && User.exists?(id: Post.find(params[:id]).next_output_user_id)
+      check_outputer_id = Post.find(params[:id]).next_output_user_id    # 投稿者のidを変数に格納
+      if params[:post][:outputer_id].to_i == check_outputer_id    # 投稿者のidと入力のidが正しいかチェック
+        Post.find(params[:id]).update(input_or_output: 2,next_input_user_id: current_user.id)   # 投稿をクリアに更新,2次質問者に自分を格納
+        output_user = User.find(check_outputer_id)  # 投稿者を変数に格納
+        output_user.output_times += 1 # 投稿者のアウトプット回数を計上する
+        output_user.save
+        flash[:notice] = "この投稿はクリアされました"
+        redirect_to root_path
+      else
+        flash[:alert] = "idがまちがってます"
+        redirect_to post_path(params[:id])
+      end
     else
-      flash[:alert] = "idがまちがってます"
-      redirect_to post_path(params[:id])
+      flash[:alert] = "ユーザーが退会しました"
+      redirect_to root_path
     end
   end
 
@@ -41,11 +46,19 @@ class PostsController < ApplicationController
 # 投稿詳細表示用
 # ===================================
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find_by(id:params[:id])
       if  @post.input_or_output == 0
-        @slack = User.find(@post.input_user_id).slack
+        if @post.input_user_id? && User.exists?(id: @post.input_user_id)
+            @slack = @post.input_user.slack
+        else
+          @slack = "ユーザーは退会しています"
+        end 
       else  
-        @slack = User.find(@post.next_output_user_id).slack
+        if @post.next_output_user_id? && User.exists?(id: @post.next_output_user_id)
+            @slack = @post.next_output_user.slack
+        else
+            @slack = "ユーザーは退会しています"
+        end
       end
   end
 
@@ -54,10 +67,6 @@ class PostsController < ApplicationController
 # ===================================
 def myshow
   @post = Post.find(params[:id])
-  @inputer = User.find_by(id: @post.input_user_id) #第一質問者
-  @outputer = User.find_by(id:@post.output_user_id) #第一回答者
-  @next_outputer = User.find_by(id:@post.next_output_user_id) #第2回答者または、教えます作成者
-  @next_inputer = User.find_by(id:@post.next_input_user_id) #第2質問者
 end
 
 # ===================================
@@ -79,17 +88,31 @@ def gooutput
       # この質問をアウトプットへ移行、output_user_idに教えてもらった人のid,next_output_user_idに自分のidを格納
       @post.update(first_update_date: @post.updated_at)
       # △△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△
-      user = User.find(params[:post][:outputer_id])
+      # user = User.find_by(id:params[:post][:outputer_id])
+      binding.pry
+      user = @post.output_user
       user.output_times += 1
       user.save
       # 教えてくれた人のアウトプット回数を計上
       flash[:notice] = "この投稿は「教えます」一覧に移行しました"
       redirect_to root_path
-
     end
   end
 end
 
+def posts_clear
+  i = 0
+  post_all = Post.all
+    post_all.each do |post|
+      if User.exists?(id: post.input_user_id) || User.exists?(id: post.output_user_id) || User.exists?(id: post.next_input_user_id) || User.exists?(id: post.next_output_user_id)
+      else
+        post.destroy
+        i += 1
+      end
+    end
+  flash[:alert] = "管理者によって、紐づくユーザーのない投稿は削除されました　削除された件数は#{i}件です"
+  redirect_to root_path
+end
 
 private
 

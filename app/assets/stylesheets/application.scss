@@ -19,6 +19,7 @@
 @import "modules/flash";
 @import "devise";
 @import "users_history";
+@import "user_ranking";
 @import "posts";
 @import "modules/header";
 @import "lessons";
@@ -32,14 +33,17 @@
 a{text-decoration: none;
 color: black;}
 .wrapper{
+  
   position: relative;
   width: 100vw;
   height: 100vh;
+  border: solid 1px black;
 
   .main-content{
     position: absolute;
     top:0;
     padding-top: 70px;
+    padding-bottom: 10px;
     width: 100%;
     height:calc(100% - 50px);
     overflow:scroll;
@@ -49,41 +53,69 @@ color: black;}
     bottom: 0;
     width: 100%;
     height: 50px;
-    border: solid;
+    border: solid 1px;
     display: flex;
     justify-content: center;
     background-color: lightgray;
-    .footer-btn{
-      button{
+    .footer_btns{
+      margin: 0 auto;
+      width: 700px;
+      display: flex;
+      justify-content: space-between;
+      .footer-btn{
+        button{
+          margin-top: 7px;
+          height: 30px;
+          width: 160px;
+          border: solid 1px;
+          border-radius: 10px;
+          text-align: center;
+          font-size: 15px;
+          @media screen and (max-width:700px){
+          margin-top: 7px;
+          height: 30px;
+          width: 100px;
+          border: solid 1px;
+          border-radius: 10px;
+          text-align: center;
+          font-size: 10px;
+          }
+        }
+      }
+
+      .home{
         margin-top: 7px;
         height: 30px;
-        width: 200px;
-        border: solid;
+        line-height: 30px;
+        width: 160px;
+        border: solid 1px;
         border-radius: 10px;
         text-align: center;
-        font-size: 15px;
-        margin-left:10px;
-      }
-    }
+        color: black;
+        background-color: white;
+        position: relative;
+        @media screen and (max-width:700px){
+          margin-top: 7px;
+          height: 30px;
+          line-height: 30px;
+          width: 100px;
+          border: solid 1px;
+          border-radius: 10px;
+          text-align: center;
+          color: black;
+          background-color: white;
+          position: relative;
+          font-size: 10px;
 
-    .home{
-      margin-left: 10px;
-      margin-top: 7px;
-      height: 30px;
-      width: 200px;
-      border: solid;
-      border-radius: 10px;
-      text-align: center;
-      color: black;
-      background-color: white;
-      position: relative;
-      a{
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        cursor: default;
+        }
+        a{
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          cursor: default;
+        }
       }
     }
   }
@@ -98,6 +130,8 @@ color: black;}
     right: 0;
     margin: auto;
     font-size: 7px;
+    z-index: 1000;
+    
 
     .cancel{
       border: solid red;

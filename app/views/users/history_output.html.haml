@@ -19,7 +19,10 @@
               = "lesson:#{post.lesson.lesson_no}"
               = post.title
             .history_oneline
-              = "教えた人：[name]#{User.find(post.next_input_user_id).name}[slack]#{User.find(post.next_input_user_id).slack}"
+              - if post.next_input_user_id? && User.exists?(id: post.next_input_user_id)
+                = "教えた人：[name]#{post.next_input_user.name}[slack]#{post.next_input_user.slack}"
+              - else
+                教えたユーザーは退会しています。
             .history_oneline
               = "教えた日時：#{post.updated_at}".gsub(/\+0900/,"" )
       .history_inner
@@ -39,7 +42,34 @@
               = "lesson:#{post.lesson.lesson_no}"
               = post.title
             .history_oneline
-              = "教えた人：[name]#{User.find(post.input_user_id).name}[slack]#{User.find(post.input_user_id).slack}"
+              - if post.input_user_id.present? && User.exists?(id: post.input_user_id)
+                = "教えた人：[name]#{post.input_user.name}[slack]#{post.input_user.slack}"
+              - else
+                教えたユーザーは退会しています。
             .history_oneline
               = "教えた日時：#{post.first_update_date}".gsub(/\+0900/,"" )
               -# inputからouput移行した日時
+  .hint-box.none
+    .cancel
+      close
+    .hint-inner
+      .hint-title
+        ●ヘッダー
+      .hint-content
+        %p
+          ○[on]・・・出席したらoffボタンをクリックしてください。(あなたの投稿に「出席中」が明示されます。)
+        %p
+          ○[マイページ]・・・投稿中の掲示板や、過去の履歴が確認できます。
+        %p
+          ○[ランキング]・・・アウトプット回数のランキングを見ることができます。
+        %p
+          ○[エディット]・・・ユーザー情報の変更ができます。
+        %p
+          ○[ログアウト]・・・ログアウトします。
+      .hint-title
+        ●コンテンツ
+        .hint-content
+          %p
+            ○[質問投稿・教えます投稿から]・・・自分が質問を投稿し、教えてもらった後、さらに誰かに教えた投稿。「教えます」を投稿し教えた投稿の一覧です。
+          %p
+            ○[掲示板から]・・・掲示板から、教えた内容の一覧です。

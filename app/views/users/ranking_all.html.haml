@@ -1,0 +1,105 @@
+.post_all
+  .post_all_inner
+    .ranking_range
+      .search_box
+        .search_title
+          ランキング範囲を絞る
+        = search_form_for @q, url: "/users/ranking_all" do |f| 
+          .search_form
+            .input_period
+              = f.number_field :period_gteq ,min:"50",max:"100"
+            %p
+              期 〜
+            .input_period
+              = f.number_field :period_lteq,min:"50",max:"100"
+            %p
+              期
+            .input_style
+              スタイル
+              = f.select :style_eq, [["短期", 1],["夜間", 2]],:include_blank => '指定なし'
+            .input_style
+              チーム
+              = f.select :team_id_eq, [["A","A" ],["B", "B"],["C", "C"],["D", "D"],["E", "E"],["F","F"],["G", "G"],["H","H"],["I","I"],["J", "J"],["K","K"],["L","L"],["M","M"],["N","N"],["O", "O"],["P","P"],["Q","Q"],["R","R"],["S", "S"],["T","U"],["U","U"],["V", "V"],["W","W"],["X","X"],["Y", "Y"],["Z","Z"]],:include_blank => '指定なし'
+            .input_style
+              = f.submit "絞る"
+      .scroll_mine
+        = link_to "自分の位置までスクロール","#mine"
+      .ranking_list
+        %table
+          %th
+            %td
+              名前
+            %td
+              アウトプット数
+            %td
+              期
+            %td
+              スタイル
+            %td
+              チーム
+            %td
+              スラック
+          - @users.each_with_index do |user,index|
+            - if user.id == current_user.id             
+              %tr#mine
+                %td.td_ranking
+                  = index + 1
+                %td.td_name
+                  = user.name
+                %td
+                  = user.output_times
+                %td.td_period
+                  = user.period
+                %td
+                  - if user.style == 1
+                    短期
+                  - else
+                    夜間
+                %td
+                  = user.team_id
+                %td.td_name
+                  = user.slack
+            - else   
+              %tr
+                %td.td_ranking
+                  = index + 1
+                %td.td_name
+                  = user.name
+                %td
+                  = user.output_times
+                %td.td_period
+                  = user.period
+                %td
+                  - if user.style == 1
+                    短期
+                  - else
+                    夜間
+                %td
+                  = user.team_id
+                %td.td_name
+                  = user.slack
+
+  .hint-box.none
+    .cancel
+      close
+    .hint-inner
+      .hint-title
+        ●ヘッダー
+      .hint-content
+        %p
+          ○[on]・・・出席したらoffボタンをクリックしてください。(あなたの投稿に「出席中」が明示されます。)
+        %p
+          ○[マイページ]・・・投稿中の掲示板や、過去の履歴が確認できます。
+        %p
+          ○[ランキング]・・・アウトプット回数のランキングを見ることができます。
+        %p
+          ○[エディット]・・・ユーザー情報の変更ができます。
+        %p
+          ○[ログアウト]・・・ログアウトします。
+      .hint-title
+        ●コンテンツ
+        .hint-content
+          %p
+            ○[ランキングを絞る]・・・期の範囲を指定、スタイル、チームを指定して、条件を絞ることができます。
+          %p
+            ○[自分の位置までスクロール]・・・ランキングの自分の位置までスクロールします。自分の表示は赤く表示されます。

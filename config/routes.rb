@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'   
@@ -13,13 +14,12 @@ Rails.application.routes.draw do
   
   root to: 'entrances#index'
 
-  resources :users do
+  resources :users,only:[:show] do
     collection do
       patch "swich"
       get "history_input"
-      # △△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△
       get "history_output"
-      # △△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△
+      get "ranking_all"
     end
   end
 
@@ -32,11 +32,15 @@ Rails.application.routes.draw do
     resources :input_posts, only: [:new,:create]
   end
 
+  resources :input_posts, only: [:edit,:update,:destroy]
 
   resources :posts,only: [:show,:update] do
     member do
       get "myshow"
       patch "gooutput"
+    end
+    collection do
+      delete "posts_clear"
     end
   end
 

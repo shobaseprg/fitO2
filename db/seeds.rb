@@ -402,7 +402,20 @@ end
 # テストユーザー
 # ===================================
 
-User.create(email:"1@gmail",password:"1111111a",name:"1",slack:"1",period: 50,style:"1",team_id:"1",output_times:0 ,on_off:0,rank:0)
+User.create(email:"1@gmail.com",password:"1111111a",name:"1taro",slack:"1taro_slack",period: 50,style:"1",team_id:"A",output_times:0 ,on_off:0)
+User.create(email:"2@gmail.com",password:"1111111a",name:"2jiro",slack:"2jiro_slack",period: 55,style:"2",team_id:"B",output_times:0 ,on_off:0)
+User.create(email:"3@gmail.com",password:"1111111a",name:"3saburo",slack:"3saburo_slack",period: 52,style:"2",team_id:"C",output_times:0 ,on_off:0)
+User.create(email:"4@gmail.com",password:"1111111a",name:"4siro",slack:"4siro_slack",period: 56,style:"2",team_id:"D",output_times:0 ,on_off:0)
+User.create(email:"5@gmail.com",password:"1111111a",name:"5goro",slack:"5goro_slack",period: 60,style:"1",team_id:"E",output_times:0 ,on_off:0)
+User.create(email:"6@gmail.com",password:"1111111a",name:"6rokuro",slack:"6rokuro_slack",period: 75,style:"2",team_id:"F",output_times:0 ,on_off:0)
+User.create(email:"7@gmail.com",password:"1111111a",name:"7sitirou",slack:"7sitirou_slack",period: 80,style:"2",team_id:"G",output_times:0 ,on_off:0)
+User.create(email:"admin@gmail.com",password:"1111111a",name:"管理者",slack:"管理者",period: 80,style:"2",team_id:"H",output_times:0 ,on_off:0,admin: 1)
 
 
-Post.create(title: "テックマスターの使い方について(基礎1-1 質問)",content:"使い方わかりません",lesson_id:1,input_user_id:1,input_or_output:0 )
+
+
+
+
+
+
+
