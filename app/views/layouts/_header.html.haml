@@ -1,11 +1,10 @@
 .header
   .fitO_box
-    = image_tag src="fitO.png",size:"160x50"
     = link_to "" ,root_path
-    -# .fitO
-    -#   fitO
-    -# .fitO_sub
-    -#   = "-from input to Output-"
+    .fitO
+      fitO
+    .fitO_sub
+      = "-from input to Output-"
   - if user_signed_in?
     - if current_user.on_off == 0
       .swith.off

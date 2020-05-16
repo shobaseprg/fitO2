@@ -1,7 +1,7 @@
 .header{
   height: 70px;
   width: 100%;
-  background: linear-gradient(to right,black,blue);
+  background: linear-gradient(to left,black,blue);
   display: flex;
   position: relative;
   align-items: center;
@@ -13,11 +13,11 @@
     left: 30px;
     display: flex;
     position: relative;
-    // border-bottom: solid white;
-    // border: solid gray;
-    // border-radius: 5px;
-    width: 205px;
+    border: solid black;
+    border-radius: 5px;
+    width: 170px;
     height: 50px;
+    background-color:yellow;
     a{
       position: absolute;
       top: 0;
@@ -26,17 +26,18 @@
       height: 100%;
     }
 
-  // .fitO{
-  //   color: white;
-  //   font-size: 30px;
-  // }
-  // .fitO_sub{
-  //   position: absolute;
-  //   left: 50px;
-  //   color:gray;
-  //   font-size: 8px;
-  //   width: 200px;
-  // }
+  .fitO{
+    color: white;
+    font-size: 30px;
+    color: black;
+  }
+  .fitO_sub{
+    position: absolute;
+    left: 50px;
+    color:gray;
+    font-size: 8px;
+    width: 200px;
+  }
 }
 
 .swith{
@@ -69,7 +70,24 @@
   .header_btns{
     display: flex;
     justify-content: flex-end;
-    width: 100%;
+    position: absolute;
+    right: 20px;
+    @media screen and (max-width:1000px){
+      position: absolute;
+      right: 20px;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      width: 400px;
+    }
+    @media screen and (max-width:600px){
+      position: absolute;
+      right: 20px;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      width: 200px;
+    }
     .header_btn{
       text-align: center;
       margin-right: 20px;
@@ -81,6 +99,19 @@
       border: solid 1px gray;
       border-radius: 10px;
       position: relative;
+      @media screen and (max-width:600px){
+        text-align: center;
+        margin-right: 20px;
+        height: 15px;
+        line-height: 15px;
+        font-size: 15px;
+        width: 120px;
+        color: white;
+        background-color:lightgray;
+        border: solid 1px gray;
+        border-radius: 10px;
+        position: relative;
+      }
       a{
         position: absolute;
         top: 0;
