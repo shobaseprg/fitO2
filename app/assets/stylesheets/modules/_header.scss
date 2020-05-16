@@ -1,7 +1,8 @@
 .header{
   height: 70px;
   width: 100%;
-  background: linear-gradient(to left,black,blue);
+  background-color: lightgray;
+  border: solid 1px;
   display: flex;
   position: relative;
   align-items: center;
@@ -94,9 +95,8 @@
       height: 30px;
       line-height: 30px;
       width: 120px;
-      color: white;
-      background-color:lightgray;
-      border: solid 1px gray;
+      background-color:white;
+      border: solid 1px;
       border-radius: 10px;
       position: relative;
       @media screen and (max-width:600px){
@@ -106,9 +106,8 @@
         line-height: 15px;
         font-size: 15px;
         width: 120px;
-        color: white;
-        background-color:lightgray;
-        border: solid 1px gray;
+        background-color:white;
+        border: solid 1px;
         border-radius: 10px;
         position: relative;
       }

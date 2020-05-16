@@ -1,6 +1,9 @@
 - if user_signed_in?
   .link_to_posts
     = link_to "掲示板を見る",lessons_path
+  .teccamp
+    TEC CAMP
+    = link_to "","https://master.tech-camp.in/"
 - if current_user.admin == true
   = "管理者権限メニュー----------------------------------------------------------------------------------------------------------------------------------------------------------------"
   .link_to_posts
