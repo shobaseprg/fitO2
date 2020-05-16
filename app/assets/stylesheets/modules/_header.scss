@@ -1,7 +1,7 @@
 .header{
   height: 70px;
   width: 100%;
-  background: linear-gradient(to left,black,blue);
+  background-color: lightgray;
   display: flex;
   position: relative;
   align-items: center;
@@ -95,7 +95,7 @@
       line-height: 30px;
       width: 120px;
       color: white;
-      background-color:lightgray;
+      background-color:white;
       border: solid 1px gray;
       border-radius: 10px;
       position: relative;
