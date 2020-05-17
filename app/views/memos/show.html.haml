@@ -5,15 +5,12 @@
   .form
     .form__title
       .title_field
-        メモ
+        = "メモ作成者：#{@memo.user.name}"
     .form__content
       .content_field
-        - if @memo
-          = toc(@memo.content) 
-          = markdown(@memo.content)
-    .form__btns
+        = toc(@memo.content) 
+        = markdown(@memo.content)
       .edit_destroy_btns
         .edit_btn
-          = link_to "メモを作成する", new_post_memo_path(@post.id),method: :get
+          = link_to "編集", edit_memo_path(@memo.id),method: :get
 
-    

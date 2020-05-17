@@ -48,8 +48,11 @@ Rails.application.routes.draw do
     collection do
       delete "posts_clear"
     end
-    resources :memos,only:[:show,:new,:create,:edit,:update]
+    resources :memos,only: :new
   end
+
+  resources :memos,only: [:show,:create,:edit,:update]
+
 
   resources :articles do
     collection do
