@@ -14,6 +14,19 @@
         .preview_btn
           プレビュー
         = f.submit
+.post_form#preview.hidden
+  .form
+    .form__title
+      .title_field#preview_title
+        プレビュー表示中
+    .form__content
+      .content_field#preview_content
+    .form__btns
+      #md_btn
+        記入する
+  -# ===================================
+  -# ヒント
+  -# ===================================
   .hint-box.none
     .cancel
       close
@@ -45,14 +58,4 @@
           %p
             ○[プレビュー]・・・マークダウン の確認ができます。投稿前に確認しましょう。
 
-.post_form#preview.hidden
-  .form
-    .form__title
-      .title_field#preview_title
-        プレビュー表示中
-    .form__content
-      .content_field#preview_content
-    .form__btns
-      #md_btn
-        記入する
 
