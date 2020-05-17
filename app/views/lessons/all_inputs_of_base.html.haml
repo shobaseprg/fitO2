@@ -7,18 +7,18 @@
     koko
     - @all_input_posts_of_lesson_base.each do |post|
       .one_post
-        = link_to "",post_path(post[0].id)
+        = link_to "",post_path(post.id)
         .one_post__title
-          = post[0].title
-          = "[id:#{post[0].id}]"
+          = post.title
+          = "[id:#{post.id}]"
         .one_post__content
-          = toc(post[0].content) 
-          = markdown(post[0].content)
-        - if post[0].input_user_id == current_user.id  # 自分の質問投稿の場合
+          = toc(post.content) 
+          = markdown(post.content)
+        - if post.input_user_id == current_user.id  # 自分の質問投稿の場合
           .your_display
             これはあなたの投稿です。
-        - if post[0].input_user_id? && User.exists?(id: post[0].input_user_id)
-          - if post[0].input_user.on_off == 1
+        - if post.input_user_id? && User.exists?(id: post.input_user_id)
+          - if post.input_user.on_off == 1
             .on_off_dispry
               出席中 
         - else
