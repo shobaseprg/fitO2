@@ -14,12 +14,16 @@ class MemosController < ApplicationController
       flash[:notice] = "「メモ」を登録しました"
     else 
       flash[:alert] = "内容を入力してください"
-      redirect_to new_post_memo_path(params[:post_id])
+      redirect_to new_post_memo_path(params[:memo][:post_id])
     end
   end
 
   def edit
     @memo = Memo.find(params[:id])
+    unless @memo.user == current_user
+      flash[:alert] = "そのメモは編集できません"
+      redirect_to root_path
+    end
   end
 
   def update
