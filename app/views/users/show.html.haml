@@ -34,7 +34,8 @@
   .post_all_inner.none{data: {target: "1"}}
     - @my_input_posts.each do |post|
       .one_post
-        = link_to "",myshow_post_path(post.id)
+        .show_link
+          = link_to "",myshow_post_path(post.id)
         .one_post__title
           - case post.lesson.base_or_development
             - when 0 then
@@ -55,7 +56,8 @@
   .post_all_inner.none{data: {target: "2"}}
     - @my_output_posts.each do |post|
       .one_post
-        = link_to "",myshow_post_path(post.id)
+        .show_link
+          = link_to "",myshow_post_path(post.id)
         .one_post__title
           - case post.lesson.base_or_development
             - when 0 then
