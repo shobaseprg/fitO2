@@ -16,6 +16,7 @@ has_many :posts,foreign_key: :input_user_id ,primary_key: :id,dependent: :nullif
 has_many :posts,foreign_key: :output_user_id ,primary_key: :id,dependent: :nullify
 has_many :posts,foreign_key: :next_input_user_id ,primary_key: :id,dependent: :nullify
 has_many :posts,foreign_key: :next_output_user_id ,primary_key: :id,dependent: :nullify
+has_many :memos ,dependent: :destroy
 #  ===================================
 #  バリデーション
 #  ===================================

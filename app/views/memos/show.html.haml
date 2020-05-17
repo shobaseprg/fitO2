@@ -1,0 +1,19 @@
+-# ===================================
+-# めも表示
+-# ==================================
+.post_form#preview
+  .form
+    .form__title
+      .title_field
+        メモ
+    .form__content
+      .content_field
+        - if @memo
+          = toc(@memo.content) 
+          = markdown(@memo.content)
+    .form__btns
+      .edit_destroy_btns
+        .edit_btn
+          = link_to "メモを作成する", new_post_memo_path(@post.id),method: :get
+
+    

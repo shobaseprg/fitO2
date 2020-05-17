@@ -12,10 +12,12 @@
         = toc(@post.content) 
         = markdown(@post.content)
     .form__btns
-
-
+      - unless @post.memos.exists?(user_id: current_user.id)
+        = link_to "メモを作成する", new_post_memo_path(@post.id),method: :get
+      - else
+        = link_to "メモ見る", post_memo_path(@post.id),method: :get
     -# ==================================
-    -# 質問の場合、名前入力箇所
+    -# 質問の場合、名前入力箇所,編集削除可能
     -# ==================================
     - if @post.input_or_output == 0 && @post.input_user_id == current_user.id 
       .thanks_for_outputer
