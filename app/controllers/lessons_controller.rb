@@ -64,37 +64,64 @@ class LessonsController < ApplicationController
   end
 
   def all_inputs_of_base
-    @all_input_posts_of_lesson_base =[]
+    @all_posts = []
     target_lessons = Lesson.where(lesson_no: params[:id]).where(base_or_development:0)
     target_lessons.each do |target_lesson|
-      @all_input_posts_of_lesson_base << target_lesson.posts.where(input_or_output:0)
+      @all_posts << target_lesson.posts.where(input_or_output:0)
     end 
-    @all_input_posts_of_lesson_base.delete_if(&:empty?)
-    binding.pry
+    @all_posts = @all_posts.delete_if(&:empty?).flatten
+    render "lessons/all_inputs"
   end
 
   def all_inputs_of_development
-    target_lesson = Lesson.where(lesson_no: params[:id])
-    @all_output_posts_of_lesson_development = target_lesson.posts.where(input_or_output:0).where(base_or_development:1)
-  end
-
-  def all_outputs_of_base
-    target_lesson = Lesson.where(lesson_no: params[:id])
-    @all_output_posts_of_lesson_base = target_lesson.posts.where(input_or_output:1).where(base_or_development:0)
-  end
-
-  def all_outputs_of_development
-    target_lesson = Lesson.where(lesson_no: params[:id])
-    @all_output_posts_of_lesson_development = target_lesson.posts.where(input_or_output:1).where(base_or_development:1)
+    @all_posts =[]
+    target_lessons = Lesson.where(lesson_no: params[:id]).where(base_or_development:1)
+    target_lessons.each do |target_lesson|
+      @all_posts << target_lesson.posts.where(input_or_output:0)
+    end 
+    @all_posts = @all_posts.delete_if(&:empty?).flatten
+    render "lessons/all_inputs"
   end
 
   def all_input_of_lasttask
-    target_lesson = Lesson.where(lesson_no: params[:id])
-    @all_input_posts_of_lesson_lasttask = target_lesson.posts.where(input_or_output:0).where(base_or_development:2)
+    @all_posts =[]
+    target_lessons = Lesson.where(lesson_no: params[:id]).where(base_or_development:2)
+    target_lessons.each do |target_lesson|
+      @all_posts << target_lesson.posts.where(input_or_output:0)
+    end 
+    @all_posts = @all_posts.delete_if(&:empty?).flatten
+    render "lessons/all_inputs"
   end
 
+  def all_outputs_of_base
+    @all_posts =[]
+    target_lessons = Lesson.where(lesson_no: params[:id]).where(base_or_development:0)
+    target_lessons.each do |target_lesson|
+      @all_posts << target_lesson.posts.where(input_or_output:1)
+    end 
+    @all_posts = @all_posts.delete_if(&:empty?).flatten
+    render "lessons/all_outputs"
+  end
+
+  def all_outputs_of_development
+    @all_posts =[]
+    target_lessons = Lesson.where(lesson_no: params[:id]).where(base_or_development:1)
+    target_lessons.each do |target_lesson|
+      @all_posts << target_lesson.posts.where(input_or_output:1)
+    end 
+    @all_posts = @all_posts.delete_if(&:empty?).flatten
+    render "lessons/all_outputs"
+  end
+
+
+
   def all_output_of_lasttask
-    target_lesson = Lesson.where(lesson_no: params[:id])
-    @all_output_posts_of_lesson_lasttask = target_lesson.posts.where(input_or_output:1).where(base_or_development:2)
+    @all_posts =[]
+    target_lessons = Lesson.where(lesson_no: params[:id]).where(base_or_development:2)
+    target_lessons.each do |target_lesson|
+      @all_posts << target_lesson.posts.where(input_or_output:1)
+    end 
+    @all_posts = @all_posts.delete_if(&:empty?).flatten
+    render "lessons/all_outputs"
   end
 end
