@@ -411,7 +411,32 @@ User.create(email:"6@gmail.com",password:"1111111a",name:"6rokuro",slack:"6rokur
 User.create(email:"7@gmail.com",password:"1111111a",name:"7sitirou",slack:"7sitirou_slack",period: 80,style:"2",team_id:"G",output_times:0 ,on_off:0)
 User.create(email:"admin@gmail.com",password:"1111111a",name:"管理者",slack:"管理者",period: 80,style:"2",team_id:"H",output_times:0 ,on_off:0,admin: 1)
 
+# ===================================
+# テスト投稿
+# ===================================
+# 質問　基礎
+Post.create(title:"ログインの仕方がわかりません　テスト",content:"https://gyazo.com/3a77e200a2bc6175d1446665ed4cc793\nどうすればログインできますか",lesson_id:1,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"webの仕組みがわかりません　テスト",content:"webおしえてください",lesson_id:5,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 14:00:01",updated_at:"")
+Post.create(title:"全体がわかりません　テスト",content:"全体増わかりません",lesson_id:6,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 14:00:01",updated_at:"")
+Post.create(title:"rubyがわかりまえん　テスト",content:"```ruby\ndef new\nPost.new\nend\n```\nrubyおしえてください１",lesson_id:23,input_user_id:"2",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 15:00:01",updated_at:"")
+Post.create(title:"rubyがわかりまえん2　テスト",content:"```ruby\ndef new\nPost.new\nend\n```\nrubyおしえてください２",lesson_id:23,input_user_id:"3",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 15:00:01",updated_at:"")
+Post.create(title:"rubyがわかりまえん3　テスト",content:"```ruby\ndef new\nPost.new\nend\n```\nrubyおしえてください３",lesson_id:23,input_user_id:"4",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 16:00:01",updated_at:"")
+Post.create(title:"レスポンスについて　テスト",content:"レスポンスおしえてください",lesson_id:40,input_user_id:"5",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 17:00:01",updated_at:"")
+# 質問　応用
+Post.create(title:"検索の仕方がわかりません　テスト",content:"```ruby\ndef new\nPost.new\nend\n```\nどうすれば検索できますか",lesson_id:84,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"読みやすいコードがわかりません　テスト",content:"```ruby\ndef new\nPost.new\nend\n```\nよみやすいコードがわかりません",lesson_id:85,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
 
+# 教えます　基礎
+Post.create(title:"ログインの仕方おしえます　テスト",content:"https://gyazo.com/3a77e200a2bc6175d1446665ed4cc793\nログインおしえます",lesson_id:1,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"1",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"webの仕組みおしえます　テスト",content:"webおしえます",lesson_id:5,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"1",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 14:00:01",updated_at:"")
+Post.create(title:"全体おしえます　テスト",content:"全体おしえます",lesson_id:6,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"2",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 14:00:01",updated_at:"")
+Post.create(title:"rubyおしえますテスト",content:"```ruby\ndef new\nPost.new\nend\n```\nruby1おしえます",lesson_id:23,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"3",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 15:00:01",updated_at:"")
+Post.create(title:"rubyおしえます2　テスト",content:"```ruby\ndef new\nPost.new\nend\n```\nruby2おしえます",lesson_id:23,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"4",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 15:00:01",updated_at:"")
+Post.create(title:"rubyおしえます3　テスト",content:"```ruby\ndef new\nPost.new\nend\n```\nruby3おしえます",lesson_id:23,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"5",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 16:00:01",updated_at:"")
+Post.create(title:"レスポンスおしえます　テスト",content:"レスポンスおしえます",lesson_id:40,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"6",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 17:00:01",updated_at:"")
+
+#質問から教えます 
+Post.create(title:"パスワードがわかりません　テスト",content:"パスワード再発行できますか",lesson_id:1,input_user_id:"1",output_user_id: "2",next_input_user_id:"",next_output_user_id:"1",input_or_output:1,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
 
 
 
