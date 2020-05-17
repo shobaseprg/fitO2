@@ -69,7 +69,8 @@ class LessonsController < ApplicationController
     target_lessons.each do |target_lesson|
       @all_input_posts_of_lesson_base << target_lesson.posts.where(input_or_output:0)
     end 
-    @all_input_posts_of_lesson_base.delete_if(&:empty?).flatten
+    @all_input_posts_of_lesson_base.delete_if(&:empty?)
+    binding.pry
   end
 
   def all_inputs_of_development
