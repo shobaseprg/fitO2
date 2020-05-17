@@ -27,6 +27,12 @@ Rails.application.routes.draw do
     member do
       get "inputs"
       get "outputs"
+      get "all_inputs_of_base"
+      get "all_outputs_of_base"
+      get "all_inputs_of_development"
+      get "all_outputs_of_development"
+      get "all_input_of_lasttask"
+      get "all_output_of_lasttask"
     end
     resources :posts, only: [:new,:create]
     resources :input_posts, only: [:new,:create]

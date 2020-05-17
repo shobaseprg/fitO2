@@ -79,7 +79,7 @@
               - total += lesson.posts.where(input_or_output:0).length
         .lesson_lists__one
           .lesson_lists__one__title
-            = link_to"全て見る",root_path
+            = link_to"全て見る(lesson:#{i})",all_inputs_of_base_lesson_path(i)
           .lesson_lists__one__number
             = "投稿数：#{total}"
       - i += 1
