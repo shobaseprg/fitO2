@@ -66,6 +66,7 @@
     - i = 1
     - n = 101
     - @bases.each do |base|
+      - total = 0
       .lesson_lists{id: "lesson#{n}"}
         .lesson_no
           = "lesson #{i}"
@@ -75,13 +76,22 @@
               = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
             .lesson_lists__one__number
               = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+              - total += lesson.posts.where(input_or_output:0).length
+        .lesson_lists__one
+          .lesson_lists__one__title
+            = link_to"全て見る",root_path
+          .lesson_lists__one__number
+            = "投稿数：#{total}"
       - i += 1
       - n += 1
+
+          
 
   .lists.none{data: {target: "2"}}
     - i = 1
     - n = 201
     - @developments.each do |development|
+      - total = 0
       .lesson_lists{id: "lesson#{n}"}
         .lesson_no
           = "lesson #{i}"
@@ -91,6 +101,12 @@
               = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
             .lesson_lists__one__number
               = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+              - total += lesson.posts.where(input_or_output:0).length
+        .lesson_lists__one
+          .lesson_lists__one__title
+            = link_to"全て見る",root_path
+          .lesson_lists__one__number
+            = "投稿数：#{total}"
       - i += 1
       - n += 1
 
@@ -98,12 +114,19 @@
     .lesson_lists{id: "lesson#{i}"}
       .lesson_no
         最終課題
+      - total = 0
       - @last_task.each do |lesson|
         .lesson_lists__one
           .lesson_lists__one__title
             = link_to"#{lesson.title}",inputs_lesson_path(lesson.id)
           .lesson_lists__one__number
             = "投稿数：#{lesson.posts.where(input_or_output:0).length}"
+            - total += lesson.posts.where(input_or_output:0).length
+      .lesson_lists__one
+        .lesson_lists__one__title
+          = link_to"全て見る",root_path
+        .lesson_lists__one__number
+          = "投稿数：#{total}"
     -# ===================================
     -# 教えます一覧
     -# ===================================  
@@ -112,6 +135,7 @@
     - i = 1
     - n = 401
     - @bases.each do |base|
+      - total = 0
       .lesson_lists{id: "lesson#{n}"}
         .lesson_no
           = "lesson #{i}"
@@ -121,6 +145,12 @@
               = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
             .lesson_lists__one__number
               = "投稿数：#{lesson.posts.where(input_or_output:1).length}"
+              - total += lesson.posts.where(input_or_output:1).length
+        .lesson_lists__one
+          .lesson_lists__one__title
+            = link_to"全て見る",root_path
+          .lesson_lists__one__number
+            = "投稿数：#{total}"
       - i += 1
       - n += 1
 
@@ -128,6 +158,7 @@
     - i = 1
     - n = 501
     - @developments.each do |development|
+      - total = 0
       .lesson_lists{id: "lesson#{n}"}
         .lesson_no
           = "lesson #{i}"
@@ -137,6 +168,12 @@
               = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
             .lesson_lists__one__number
               = "投稿数：#{lesson.posts.where(input_or_output:1).length}"
+              - total += lesson.posts.where(input_or_output:1).length
+        .lesson_lists__one
+          .lesson_lists__one__title
+            = link_to"全て見る",root_path
+          .lesson_lists__one__number
+            = "投稿数：#{total}"
       - i += 1
       - n += 1
 
@@ -144,12 +181,19 @@
     .lesson_lists{id: "lesson#{i}"}
       .lesson_no
         最終課題
+      - total = 0
       - @last_task.each do |lesson|
         .lesson_lists__one
           .lesson_lists__one__title
             = link_to"#{lesson.title}",outputs_lesson_path(lesson.id)
           .lesson_lists__one__number
             = "投稿数：#{lesson.posts.where(input_or_output:1).length}"
+            - total += lesson.posts.where(input_or_output:1).length
+      .lesson_lists__one
+        .lesson_lists__one__title
+          = link_to"全て見る",root_path
+        .lesson_lists__one__number
+          = "投稿数：#{total}"
 
   .hint-box.none
     .cancel
