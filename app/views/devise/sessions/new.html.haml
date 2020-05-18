@@ -19,4 +19,5 @@
       ※英数字含む８文字以上
     .actions
       = f.submit "Log in"
-  = render "devise/shared/links"
+    .actions
+      = link_to "パスワードを忘れた場合",new_user_password_path
