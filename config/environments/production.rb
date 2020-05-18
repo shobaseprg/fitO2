@@ -97,7 +97,7 @@ Rails.application.configure do
   address: 'smtp.gmail.com',
   port: 587,
   user_name: 'testmaildevise@gmail.com',
-  password: Rails.application.credentials[:emailpass]
+  password: Rails.application.credentials[:emailpass],
   authentication: 'plain',
   enable_starttls_auto: true
 }
