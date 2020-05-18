@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
-    :sessions => 'users/sessions'  , 
-    :passwords => '/users/password/edit'
+    :sessions => 'users/sessions'   
   } 
 
   devise_scope :user do
