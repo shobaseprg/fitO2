@@ -33,7 +33,6 @@ class LessonsController < ApplicationController
                      @development11,@development12, @development13,@development14]
 
     @last_task = Lesson.where(base_or_development:2,lesson_no:1,active:1).order(sub_number: "ASC")
-binding.pry
   end
 
   
