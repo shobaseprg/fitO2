@@ -2,38 +2,38 @@ class LessonsController < ApplicationController
 
   def index
     # それぞれのレッスンに対するカリキュラムを格納
-    @base1 = Lesson.where(base_or_development:0,lesson_no:1).order(sub_number: "ASC")
-    @base2 = Lesson.where(base_or_development:0,lesson_no:2).order(sub_number: "ASC")
-    @base3 = Lesson.where(base_or_development:0,lesson_no:3).order(sub_number: "ASC")
-    @base4 = Lesson.where(base_or_development:0,lesson_no:4).order(sub_number: "ASC")
-    @base5 = Lesson.where(base_or_development:0,lesson_no:5).order(sub_number: "ASC")
-    @base6 = Lesson.where(base_or_development:0,lesson_no:6).order(sub_number: "ASC")
-    @base7 = Lesson.where(base_or_development:0,lesson_no:7).order(sub_number: "ASC")
-    @base8 = Lesson.where(base_or_development:0,lesson_no:8).order(sub_number: "ASC")
-    @base9 = Lesson.where(base_or_development:0,lesson_no:9).order(sub_number: "ASC")
+    @base1 = Lesson.where(base_or_development:0,lesson_no:1,active:1).order(sub_number: "ASC")
+    @base2 = Lesson.where(base_or_development:0,lesson_no:2,active:1).order(sub_number: "ASC")
+    @base3 = Lesson.where(base_or_development:0,lesson_no:3,active:1).order(sub_number: "ASC")
+    @base4 = Lesson.where(base_or_development:0,lesson_no:4,active:1).order(sub_number: "ASC")
+    @base5 = Lesson.where(base_or_development:0,lesson_no:5,active:1).order(sub_number: "ASC")
+    @base6 = Lesson.where(base_or_development:0,lesson_no:6,active:1).order(sub_number: "ASC")
+    @base7 = Lesson.where(base_or_development:0,lesson_no:7,active:1).order(sub_number: "ASC")
+    @base8 = Lesson.where(base_or_development:0,lesson_no:8,active:1).order(sub_number: "ASC")
+    @base9 = Lesson.where(base_or_development:0,lesson_no:9,active:1).order(sub_number: "ASC")
     @bases = [@base1,@base2,@base3,@base4,@base5,@base6,@base7,@base8,@base9]
 
-    @development1 = Lesson.where(base_or_development:1,lesson_no:1).order(sub_number: "ASC")
-    @development2 = Lesson.where(base_or_development:1,lesson_no:2).order(sub_number: "ASC")
-    @development3 = Lesson.where(base_or_development:1,lesson_no:3).order(sub_number: "ASC")
-    @development4 = Lesson.where(base_or_development:1,lesson_no:4).order(sub_number: "ASC")
-    @development5 = Lesson.where(base_or_development:1,lesson_no:5).order(sub_number: "ASC")
-    @development6 = Lesson.where(base_or_development:1,lesson_no:6).order(sub_number: "ASC")
-    @development7 = Lesson.where(base_or_development:1,lesson_no:7).order(sub_number: "ASC")
-    @development8 = Lesson.where(base_or_development:1,lesson_no:8).order(sub_number: "ASC")
-    @development9 = Lesson.where(base_or_development:1,lesson_no:9).order(sub_number: "ASC")
-    @development10 = Lesson.where(base_or_development:1,lesson_no:10).order(sub_number: "ASC")
-    @development11 = Lesson.where(base_or_development:1,lesson_no:11).order(sub_number: "ASC")
-    @development12 = Lesson.where(base_or_development:1,lesson_no:12).order(sub_number: "ASC")
-    @development13 = Lesson.where(base_or_development:1,lesson_no:13).order(sub_number: "ASC")
-    @development14 = Lesson.where(base_or_development:1,lesson_no:14).order(sub_number: "ASC")
+    @development1 = Lesson.where(base_or_development:1,lesson_no:1,active:1).order(sub_number: "ASC")
+    @development2 = Lesson.where(base_or_development:1,lesson_no:2,active:1).order(sub_number: "ASC")
+    @development3 = Lesson.where(base_or_development:1,lesson_no:3,active:1).order(sub_number: "ASC")
+    @development4 = Lesson.where(base_or_development:1,lesson_no:4,active:1).order(sub_number: "ASC")
+    @development5 = Lesson.where(base_or_development:1,lesson_no:5,active:1).order(sub_number: "ASC")
+    @development6 = Lesson.where(base_or_development:1,lesson_no:6,active:1).order(sub_number: "ASC")
+    @development7 = Lesson.where(base_or_development:1,lesson_no:7,active:1).order(sub_number: "ASC")
+    @development8 = Lesson.where(base_or_development:1,lesson_no:8,active:1).order(sub_number: "ASC")
+    @development9 = Lesson.where(base_or_development:1,lesson_no:9,active:1).order(sub_number: "ASC")
+    @development10 = Lesson.where(base_or_development:1,lesson_no:10,active:1).order(sub_number: "ASC")
+    @development11 = Lesson.where(base_or_development:1,lesson_no:11,active:1).order(sub_number: "ASC")
+    @development12 = Lesson.where(base_or_development:1,lesson_no:12,active:1).order(sub_number: "ASC")
+    @development13 = Lesson.where(base_or_development:1,lesson_no:13,active:1).order(sub_number: "ASC")
+    @development14 = Lesson.where(base_or_development:1,lesson_no:14,active:1).order(sub_number: "ASC")
 
     @developments = [@development1,@development2,@development3,@development4,@development5,
                      @development6,@development7,@development8,@development9,@development10,
                      @development11,@development12, @development13,@development14]
 
-    @last_task = Lesson.where(base_or_development:2,lesson_no:1).order(sub_number: "ASC")
-
+    @last_task = Lesson.where(base_or_development:2,lesson_no:1,active:1).order(sub_number: "ASC")
+binding.pry
   end
 
   

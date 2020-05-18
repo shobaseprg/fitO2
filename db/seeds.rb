@@ -10,7 +10,7 @@ lessons_base_1 =
 
 i = 1
 lessons_base_1.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:1,base_or_development:0)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:1,base_or_development:0,active:1)
   i += 1
 end
 
@@ -26,7 +26,7 @@ lessons_base_2 =
 
 i = 1
 lessons_base_2.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:2,base_or_development:0)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:2,base_or_development:0,active:1)
   i += 1
 end
 
@@ -44,7 +44,7 @@ lessons_base_3 =
 
 i = 1
 lessons_base_3.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:3,base_or_development:0)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:3,base_or_development:0,active:1)
   i += 1
 end
 
@@ -64,7 +64,7 @@ lessons_base_4 =
 
 i = 1
 lessons_base_4.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:4,base_or_development:0)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:4,base_or_development:0,active:1)
   i += 1
 end
 
@@ -76,7 +76,7 @@ lessons_base_5 =
 
 i = 1
 lessons_base_5.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:5,base_or_development:0)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:5,base_or_development:0,active:1)
   i += 1
 end
 
@@ -96,7 +96,7 @@ lessons_base_6 =
 
 i = 1
 lessons_base_6.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:6,base_or_development:0)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:6,base_or_development:0,active:1)
   i += 1
 end
 
@@ -118,7 +118,7 @@ lessons_base_7 =
 
 i = 1
 lessons_base_7.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:7,base_or_development:0)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:7,base_or_development:0,active:1)
   i += 1
 end
 
@@ -138,7 +138,7 @@ lessons_base_8 =
 
 i = 1
 lessons_base_8.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:8,base_or_development:0)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:8,base_or_development:0,active:1)
   i += 1
 end
 
@@ -152,7 +152,7 @@ lessons_base_9 =
 
 i = 1
 lessons_base_9.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:9,base_or_development:0)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:9,base_or_development:0,active:1)
   i += 1
 end
 
@@ -167,7 +167,7 @@ lessons_development_1 =
 
 i = 1
 lessons_development_1.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:1,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:1,base_or_development:1,active:1)
   i += 1
 end
 
@@ -180,7 +180,7 @@ lessons_development_2 =
 
 i = 1
 lessons_development_2.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:2 ,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:2 ,base_or_development:1,active:1)
   i += 1
 end
 
@@ -194,7 +194,7 @@ lessons_development_3  =
 
 i = 1
 lessons_development_3.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:3 ,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:3 ,base_or_development:1,active:1)
   i += 1
 end
 
@@ -208,7 +208,7 @@ lessons_development_4  =
 
 i = 1
 lessons_development_4.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:4 ,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:4 ,base_or_development:1,active:1)
   i += 1
 end
 
@@ -220,7 +220,7 @@ lessons_development_5 =
 
 i = 1
 lessons_development_5.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:5 ,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:5 ,base_or_development:1,active:1)
   i += 1
 end
 
@@ -233,7 +233,7 @@ lessons_development_6 =
 
 i = 1
 lessons_development_6.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:6 ,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:6 ,base_or_development:1,active:1)
   i += 1
 end
 
@@ -246,7 +246,7 @@ lessons_development_7  =
 
 i = 1
 lessons_development_7.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:7 ,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:7 ,base_or_development:1,active:1)
   i += 1
 end
 
@@ -260,7 +260,7 @@ lessons_development_8 =
 
 i = 1
 lessons_development_8.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:8 ,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:8 ,base_or_development:1,active:1)
   i += 1
 end
 
@@ -278,7 +278,7 @@ lessons_development_9  =
 
 i = 1
 lessons_development_9.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:9 ,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:9 ,base_or_development:1,active:1)
   i += 1
 end
 
@@ -294,7 +294,7 @@ lessons_development_10  =
 
 i = 1
 lessons_development_10.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:10 ,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:10 ,base_or_development:1,active:1)
   i += 1
 end
 
@@ -306,7 +306,7 @@ lessons_development_11  =
 
 i = 1
 lessons_development_11.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:11 ,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:11 ,base_or_development:1,active:1)
   i += 1
 end
 
@@ -327,7 +327,7 @@ lessons_development_12  =
 
 i = 1
 lessons_development_12.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:12 ,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:12 ,base_or_development:1,active:1)
   i += 1
 end
 
@@ -348,7 +348,7 @@ lessons_development_13  =
 
 i = 1
 lessons_development_13.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:13 ,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:13 ,base_or_development:1,active:1)
   i += 1
 end
 
@@ -365,7 +365,7 @@ lessons_development_14  =
 
 i = 1
 lessons_development_14.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:14 ,base_or_development:1)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:14 ,base_or_development:1,active:1)
   i += 1
 end
 
@@ -395,7 +395,7 @@ lessons_last_task  =
 
 i = 1
 lessons_last_task.each do |lesson|
-  Lesson.create(sub_number:i,title:lesson,lesson_no:1 ,base_or_development:2)
+  Lesson.create(sub_number:i,title:lesson,lesson_no:1 ,base_or_development:2,active:1)
 end
 
 # ===================================

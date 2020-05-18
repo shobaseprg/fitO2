@@ -110,7 +110,7 @@ end
 # 紐づかない投稿を削除用
 # ===================================
 def posts_clear
-  if current_user.id == 0
+  if current_user.name == "管理者"
   i = 0
   post_all = Post.all
     post_all.each do |post|
@@ -121,10 +121,12 @@ def posts_clear
       end
     end
   flash[:alert] = "管理者によって、紐づくユーザーのない投稿は削除されました　削除された件数は#{i}件です"
-  redirect_to root_path　return
+  redirect_to root_path
+  return
   else
     flash[:alert] = "管理者のみに権限があります"
-    redirect_to root_path　return
+    redirect_to root_path
+    return
   end
 
 end

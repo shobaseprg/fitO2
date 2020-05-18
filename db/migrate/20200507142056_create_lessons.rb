@@ -5,6 +5,7 @@ class CreateLessons < ActiveRecord::Migration[5.2]
       t.integer :base_or_development,null: false
       t.integer :lesson_no,null: false
       t.string :title,null: false
+      t.integer :active
       t.timestamps
     end
   end

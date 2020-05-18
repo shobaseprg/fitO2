@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_05_17_104517) do
     t.integer "base_or_development", null: false
     t.integer "lesson_no", null: false
     t.string "title", null: false
+    t.integer "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
