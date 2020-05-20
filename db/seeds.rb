@@ -416,24 +416,24 @@ User.create(email:"admin@gmail.com",password:"1111111a",name:"管理者",slack:"
 # ===================================
 # 質問　基礎
 Post.create(title:"ログインの仕方がわかりません　",content:"https://gyazo.com/3a77e200a2bc6175d1446665ed4cc793\nどうすればログインできますか",lesson_id:1,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
-Post.create(title:"webの仕組みがわかりません　",content:"webおしえてください 1",lesson_id:5,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 14:00:01",updated_at:"")
-Post.create(title:"全体がわかりません　",content:"全体増わかりません 1",lesson_id:6,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 14:00:01",updated_at:"")
+Post.create(title:"webの仕組みがわかりません　",content:"webおしえてください",lesson_id:5,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 14:00:01",updated_at:"")
+Post.create(title:"全体がわかりません　",content:"全体わかりません",lesson_id:6,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 14:00:01",updated_at:"")
 Post.create(title:"rubyがわかりまえん　",content:"```ruby\ndef new\nPost.new\nend\n```\nrubyおしえてください 3",lesson_id:23,input_user_id:"2",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 15:00:01",updated_at:"")
 Post.create(title:"rubyがわかりまえんb　",content:"```ruby\ndef new\nPost.new\nend\n```\nrubyおしえてください 3",lesson_id:23,input_user_id:"3",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 15:00:01",updated_at:"")
 Post.create(title:"rubyがわかりまえんc　",content:"```ruby\ndef new\nPost.new\nend\n```\nrubyおしえてください 4",lesson_id:23,input_user_id:"4",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 16:00:01",updated_at:"")
-Post.create(title:"レスポンスについて　",content:"レスポンスおしえてください 5",lesson_id:40,input_user_id:"5",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 17:00:01",updated_at:"")
-Post.create(title:"html わかりません　",content:"htmlおしえてください 5",lesson_id:12,input_user_id:"5",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 17:00:01",updated_at:"")
-Post.create(title:"html わかりませんb　",content:"htmlおしえてください 6",lesson_id:12,input_user_id:"6",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 17:00:01",updated_at:"")
+Post.create(title:"レスポンスについて　",content:"レスポンスおしえてください",lesson_id:40,input_user_id:"5",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 17:00:01",updated_at:"")
+Post.create(title:"html わかりません　",content:"htmlおしえてください",lesson_id:12,input_user_id:"5",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 17:00:01",updated_at:"")
+Post.create(title:"html わかりませんb　",content:"htmlおしえてください",lesson_id:12,input_user_id:"6",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 17:00:01",updated_at:"")
 
 # 質問　応用
-Post.create(title:"検索の仕方がわかりません　",content:"どうすれば検索できますか 1",lesson_id:84,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
-Post.create(title:"検索の仕方がわかりませんb　",content:"どうすれば検索できますか 2",lesson_id:84,input_user_id:"2",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"検索の仕方がわかりません　",content:"どうすれば検索できますか",lesson_id:84,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"検索の仕方がわかりませんb　",content:"どうすれば検索できますか",lesson_id:84,input_user_id:"2",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
 Post.create(title:"読みやすいコードがわかりません　",content:"よみやすいコードがわかりません",lesson_id:85,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
 
 # 質問　最終
-Post.create(title:"パンくずってなに　",content:"なんですか 1",lesson_id:190,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
-Post.create(title:"パンくずってなにb　",content:"なんですか 3",lesson_id:190,input_user_id:"3",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
-Post.create(title:"コメントってなに",content:"なんですか 4",lesson_id:189,input_user_id:"4",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"パンくずってなに　",content:"なんですか",lesson_id:190,input_user_id:"1",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"パンくずってなにb　",content:"なんですか",lesson_id:190,input_user_id:"3",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"コメントってなに",content:"なんですか",lesson_id:189,input_user_id:"4",output_user_id: "",next_input_user_id:"",next_output_user_id:"",input_or_output:0,start_input_or_output:0 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
 
 
 # 教えます　基礎
@@ -446,22 +446,22 @@ Post.create(title:"rubyおしえます3　",content:"```ruby\ndef new\nPost.new\
 Post.create(title:"レスポンスおしえます　",content:"レスポンスおしえます",lesson_id:40,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"6",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 17:00:01",updated_at:"")
 
 #　教えます　応用
-Post.create(title:"発信のしかた教えます　",content:"発信おしえます2",lesson_id:80,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"2",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
-Post.create(title:"発信のしかた教えますb　",content:"発信おしえます3",lesson_id:80,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"3",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
-Post.create(title:"リファクタリング",content:"リファクタリングおしえます2",lesson_id:86,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"2",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
-Post.create(title:"正規表現",content:"正規表現おしえます4",lesson_id:87,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"4",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"発信のしかた教えます　",content:"発信おしえます",lesson_id:80,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"2",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"発信のしかた教えますb　",content:"発信おしえます",lesson_id:80,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"3",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"リファクタリング",content:"リファクタリングおしえます",lesson_id:86,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"2",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"正規表現",content:"正規表現おしえます",lesson_id:87,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"4",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
 
 # 教えます　最終
-Post.create(title:"パンくず　",content:"おしえます 1",lesson_id:190,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"1",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
-Post.create(title:"パンくずb　",content:"おしえます 3",lesson_id:190,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"3",input_or_output:1,start_input_or_output:1,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
-Post.create(title:"コメント",content:"おしえます 4",lesson_id:189,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"4",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"パンくず　",content:"おしえます",lesson_id:190,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"1",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"パンくずb　",content:"おしえます",lesson_id:190,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"3",input_or_output:1,start_input_or_output:1,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"コメント",content:"おしえます",lesson_id:189,input_user_id:"",output_user_id: "",next_input_user_id:"",next_output_user_id:"4",input_or_output:1,start_input_or_output:1 ,first_update_date:"",created_at:"2020-05-16 13:00:01",updated_at:"")
 
 
 #質問から教えます 
 # 基礎
-Post.create(title:"パスワードがわかりません　",content:"パスワード再発行できますか1←2",lesson_id:1,input_user_id:"1",output_user_id: "2",next_input_user_id:"",next_output_user_id:"1",input_or_output:1,start_input_or_output:0 ,first_update_date:"2020-05-16 14:00:01",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"パスワードがわかりません　",content:"パスワード再発行できますか",lesson_id:1,input_user_id:"1",output_user_id: "2",next_input_user_id:"",next_output_user_id:"1",input_or_output:1,start_input_or_output:0 ,first_update_date:"2020-05-16 14:00:01",created_at:"2020-05-16 13:00:01",updated_at:"")
 # 応用
-Post.create(title:"jsわかりません　",content:"わかりません2←3",lesson_id:1,input_user_id:"2",output_user_id: "3",next_input_user_id:"",next_output_user_id:"2",input_or_output:1,start_input_or_output:0 ,first_update_date:"2020-05-16 14:00:01",created_at:"2020-05-16 13:00:01",updated_at:"")
+Post.create(title:"jsわかりません　",content:"わかりません",lesson_id:1,input_user_id:"2",output_user_id: "3",next_input_user_id:"",next_output_user_id:"2",input_or_output:1,start_input_or_output:0 ,first_update_date:"2020-05-16 14:00:01",created_at:"2020-05-16 13:00:01",updated_at:"")
 
 
 
