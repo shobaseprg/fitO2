@@ -95,7 +95,6 @@ def gooutput
       @post.update(first_update_date: @post.updated_at)
       # △△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△
       # user = User.find_by(id:params[:post][:outputer_id])
-      binding.pry
       user = @post.output_user
       user.output_times += 1
       user.save
