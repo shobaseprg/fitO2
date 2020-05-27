@@ -21,4 +21,4 @@ https://youtu.be/qzOHOgSmRt0
 
 ①掲示板は、カリキュラムごとに紐づいて管理されており、「教えます（アウトプット)掲示板」と「質問（インプット)掲示板」の2種類の掲示板から構成されている。
 
-![09e902f30b7ac9f7356ee5d3cbe01aec](https://user-images.githubusercontent.com/58842818/82966359-a6169580-a005-11ea-8ec4-006ee4544457.gif)
+https://user-images.githubusercontent.com/58842818/82966359-a6169580-a005-11ea-8ec4-006ee4544457.gif
