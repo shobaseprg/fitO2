@@ -1,24 +1,16 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+【開発】
+アプリ名：fitO
+URL:http://54.238.67.129
 
-Things you may want to cover:
+テストユーザー:1@gmail.com
+ password:1111111a
 
-* Ruby version
+管理者: admin@gmail.com
+password:1111111a
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+GitURL:https://github.com/shobaseprg/fitO2
+・開発環境（rails、mac、mysql、AWS）
+・概要(プログラミングスクール受講生のアウトプット支援アプリ)
+・制作背景
+　プログラミングスクールを通う中で、多くの挫折者を目の当たりにした。挫折の理由は自信をなくしたことが理由であると感じる。最も効果的に自分の成長を感じることができ、尚且つ効率的に知識を定着させる方法は「他者に教える（アウトプットする）することであると考え、それを支援するためのアプリを作成しようと思い立った。
