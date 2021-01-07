@@ -86,5 +86,3 @@ gem 'rouge'
 gem 'ransack'
 gem 'cancancan'
 gem 'rails_admin', '~> 2.0.0.beta'
-
-
