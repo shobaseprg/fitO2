@@ -1,28 +1,20 @@
-# Version 3はファイルの記述定義のうち安定して利用できる最新版とのことです
 version: "3"
 services:
-# "db"というコンテナを定義
   db:
-    # MySQLのイメージを指定します
     image: mysql:5.7
-    environment:
-    # PasswordとUsernameはdatabase.ymlと合わせます
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: root
     ports:
-      - "4306:3306"
-    # ポートはどちらも"3306"でも大丈夫ですが、左側を"4306"と別の番号にすることでSequel ProでデータをDBを確認できるようになります。
+      - "3306:3306"
+    networks:
+      - fitO2-network
 
-# "web"というコンテナを定義
   web:
     build: .
     command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails db:create && bundle exec rails db:migrate && bundle exec rails db:seed && bundle exec rails s -p 3000 -b '0.0.0.0'"
-
-    # ローカルのディレクトリをマウント
     volumes:
       - .:/app_name
     ports:
       - "3000:3000"
-    # appコンテナとdbコンテナを連携
-    links:
-      - db
+    networks:
+      - fitO2-network
+networks:
+  fitO2-network:
