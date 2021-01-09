@@ -1,0 +1,4 @@
+DB_USERNAME=root
+DB_PASSWORD=pasuwa
+DB_HOST=fitO2_db
+DB_DATABASE=fitO2_db
