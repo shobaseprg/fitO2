@@ -9,12 +9,12 @@ services:
       - public-data:/webapp/public
       - tmp-data:/webapp/tmp
       - log-data:/webapp/log
-    depends_on:
-      - db
-  db:
-    image: mysql:5.7
-    volumes:
-      - db-data:/var/lib/mysql
+    # depends_on:
+    #   - db
+  # db:
+  #   image: mysql:5.7
+  #   volumes:
+  #     - db-data:/var/lib/mysql
   web:
     build:
       context: containers/nginx

@@ -16,16 +16,15 @@ test:
   database: myapp_test
 
 production:
+  <<: *default
+  database: <%= ENV['DB_DATABASE'] %>
   adapter: mysql2
-  encoding: utf8
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  socket: /tmp/mysql.sock
-  database: myapp_production
-  username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  encoding: utf8mb4
+  charset: utf8mb4
+  collation: utf8mb4_general_ci
+  host: <%= ENV['DB_HOST'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
 
 # <<: *defaultは「default」を一つにまとめて使用するという意味なので
 # 本番環境はDockerと干渉させないために「production」のみ個別で書きます
