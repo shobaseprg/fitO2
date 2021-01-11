@@ -93,8 +93,6 @@ def gooutput
       @post.update(input_or_output: 1,output_user_id: params[:post][:outputer_id],next_output_user_id:current_user.id)
       # この質問をアウトプットへ移行、output_user_idに教えてもらった人のid,next_output_user_idに自分のidを格納
       @post.update(first_update_date: @post.updated_at)
-      # △△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△△記述箇所△△△
-      # user = User.find_by(id:params[:post][:outputer_id])
       user = @post.output_user
       user.output_times += 1
       user.save
