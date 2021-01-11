@@ -1,26 +1,27 @@
 FROM ruby:2.5.1
 
-# リポジトリを更新し依存モジュールをインストール
 RUN apt-get update -qq && \
   apt-get install -y build-essential \
   nodejs\
   mysql-server\
   mysql-client
 
-# ルート直下にwebappという名前で作業ディレクトリを作成（コンテナ内のアプリケーションディレクトリ）
-RUN mkdir /webapp
-WORKDIR /webapp
+# RUN mkdir /fitO2
+WORKDIR /fitO2
 
 # ホストのGemfileとGemfile.lockをコンテナにコピー
-ADD Gemfile /webapp/Gemfile
-ADD Gemfile.lock /webapp/Gemfile.lock
+# ADD Gemfile /fitO2/Gemfile
+# ADD Gemfile.lock /fitO2/Gemfile.lock
+
+COPY  Gemfile /fitO2/Gemfile
+COPY Gemfile.lock /fitO2/Gemfile.lock
 
 ## bundle installの実行
 RUN gem install bundler
 RUN bundle install
 
 # ホストのアプリケーションディレクトリ内をすべてコンテナにコピー
-ADD . /webapp
+# ADD . /fitO2
 
 # puma.sockを配置するディレクトリを作成
 RUN mkdir -p tmp/sockets

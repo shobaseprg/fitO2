@@ -9,11 +9,11 @@ default: &default
 
 development:
   <<: *default
-  database: myapp_development
+  database: fitO2_development
 
 test:
   <<: *default
-  database: myapp_test
+  database: fitO2_test
 
 production:
   <<: *default
@@ -24,7 +24,7 @@ production:
   collation: utf8mb4_general_ci
   host: <%= ENV['DB_HOST'] %>
   username: <%= ENV['DB_USERNAME'] %>
-  password: pasuwakun
+  password: <%= ENV['DB_PASSWORD'] %>
 
 # <<: *defaultは「default」を一つにまとめて使用するという意味なので
 # 本番環境はDockerと干渉させないために「production」のみ個別で書きます
